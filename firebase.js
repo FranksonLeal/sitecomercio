@@ -1,0 +1,1 @@
+const firebaseConfig={apiKey:"AIzaSyDFFMSdx5Z9bW545lVFnQrL78Q4gcUwpuI",authDomain:"site-comercio.firebaseapp.com",projectId:"site-comercio",storageBucket:"site-comercio.appspot.com",messagingSenderId:"862171238249",appId:"1:862171238249:web:93a346f555a5d6f68177f8"};firebase.initializeApp(firebaseConfig);

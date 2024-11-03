@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Login-Comercial Leal</title>
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+  <div class="container" id="auth-container">
+    <div class="content first-content">
+      <div class="first-column">
+        <h2 class="title title-primary">Bem-vindo amigo(a) cliente!</h2>
+        <p class="description description-primary">Não possui cadastro?</p>
+        <p class="description description-primary">
+          Aperte no botão abaixo e cadastre-se
+        </p>
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="register-button"
+          onclick="register()"
+        >
+          Cadastrar
+        </button>
+      </div>
+      <div class="second-column" id="signup-container">
+        <h2 class="title title-second">Fazer login</h2>
+        
+        <p class="description description-second">Utilize email e senha</p>
+        <form class="form" id="signup-form">
+          <div>
+            <label class="label-input" for="email-input">
+              <i class="far fa-envelope icon-modify"></i>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="seu@email.com"
+              />
+            </label>
+          </div>
+          <div>
+            <label class="label-input" for="password-input">
+              <i class="fas fa-lock icon-modify"></i>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Senha"
+              />
+            </label>
+          </div>
+          <button type="button" class="btn btn-second" id="forgot-password-button" disabled="true">
+            Recuperar senha
+          </button>
+          <button type="submit" class="btn btn-second" id="login-button">Entrar</button>
+        </form>
+        
+        <div id="loading" style="display: none; position: fixed; top: 8%; text-align: center; width: 180px; left: 50%; transform: translate(-50%, -50%); background-color: rgba(243, 170, 34, 0.8);; padding: 20px; border-radius: 10px; z-index: 1000;">
+          <!-- Aqui você pode adicionar o seu indicador de carregamento, como uma animação ou uma mensagem -->
+          Carregando...
+      </div>
+      
+        <div id="auth-message"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+  <script src="loading.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth-compat.js"></script>
+  <script src="firebase.js"></script>
+
+
+</body>
+</html>

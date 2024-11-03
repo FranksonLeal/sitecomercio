@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel de controle</title>
+
+    <!-- Adicione os links para o CSS e o JavaScript -->
+    <link rel="stylesheet" href="painelControle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <img src="img/logo.png" alt="" />
+      </a>
+    </header>
+
+    <section class="cadastro" id="cadastro">
+      <h1 class="heading"><span>Produtos</span> Cadastrados</h1>
+      <!-- Formulário de cadastro de produtos -->
+      <!-- Formulário de cadastro de produtos -->
+      <form id="product-form">
+        <h3>Cadastrar Novo Produto</h3>
+        <div class="inputBox">
+          <input type="file" id="product-image" accept="image/*" />
+        </div>
+        <div class="inputBox">
+          <input type="text" id="product-name" placeholder="Nome do Produto" />
+        </div>
+        <div class="inputBox">
+          <input
+            type="text"
+            id="product-price"
+            placeholder="Preço do Produto"
+          />
+        </div>
+        <button
+          type="button"
+          class="btn"
+          id="submit-button"
+          onclick="submitForm()"
+        >
+          Cadastrar Produto
+        </button>
+      </form>
+
+      <!-- Tabela para exibir produtos cadastrados -->
+      <table id="product-table">
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Ações</th>
+            <!-- Coluna para os botões -->
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="clientes" id="clientes">
+      <h1 class="heading"><span>Clientes</span> Cadastrados</h1>
+      <!-- Tabela para exibir clientes cadastrados -->
+      <table id="client-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Ações</th>
+            <!-- Coluna para os botões -->
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="footer" id="redesSociais">
+      <div class="share">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-instagram"></a>
+      </div>
+      <div class="links">
+        <a href="#home">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#contato">Contatos</a>
+        <a href="#redesSociais">Redes sociais</a>
+      </div>
+      <div class="credit">
+        created by <span>Comercial Leal</span> | Diireitos reservados
+      </div>
+    </section>
+
+    <!-- Importe o Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-storage-compat.js"></script>
+
+    <!-- Sua configuração do Firebase -->
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyDFFMSdx5Z9bW545lVFnQrL78Q4gcUwpuI",
+        authDomain: "site-comercio.firebaseapp.com",
+        projectId: "site-comercio",
+        storageBucket: "site-comercio.appspot.com",
+        messagingSenderId: "862171238249",
+        appId: "1:862171238249:web:93a346f555a5d6f68177f8",
+      };
+
+      // Inicialize o Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Seus outros scripts -->
+    <script src="service.js"></script>
+    <script src="painelControle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.8/dist/countUp.umd.js"></script>
+  </body>
+</html>

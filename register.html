@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cadastro</title>
+   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+        <link rel="stylesheet" href="register.css">
+
+    </head>
+<body>
+    <div class="container" id="auth-container">
+        <div class="content first-content">
+            <div class="first-column">
+                <h2 class="title title-primary">Bem-vindo amigo(a) cliente!</h2>
+                <p class="description description-primary">Ja possui conta?</p>
+                <p class="description description-primary">Aperte no botão abaixo e realize login</p>
+                <button type="button" class="btn btn-primary" onclick="login()">Entrar</button>
+            </div>    
+            <div class="second-column" id="signup-container">
+                <h2 class="title title-second">Fazer cadastro</h2>
+                
+                <p class="description description-second">Faça seu registro com seus dados pessoais</p>
+
+                <form class="form" id="signup-form">
+                    <label class="label-input" for="nome-input">
+                        <i class="fas fa-user icon-modify"></i>
+
+                        <input type="text" placeholder="Nome" id="nome"/>
+                        
+                    </label>
+                    
+
+                    <label class="label-input" for="email-input">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="seu@email.com"  id="email"/>
+                        
+                    </label>
+                  
+                    <label class="label-input" for="password-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Senha" id="password" />
+                        
+                    </label>
+                
+             
+                    <label class="label-input" for="telefone-input">
+                        <i class="fas fa-phone icon-modify"></i>
+
+                        <input type="text" placeholder="Telefone"  id="telefone"/>
+                        
+                    </label>
+
+                    <label class="label-input" for="cep-input">
+                        <i class="fas fa-map-pin icon-modify"></i>
+                        <input type="text" placeholder="CEP" id="cep" onblur="buscarEndereco(this.value)"/>
+                    </label>
+                    
+                   
+                    <label class="label-input" for="endereco-input">
+                        <i class="fas fa-map-marker-alt icon-modify"></i>
+
+                        <input type="text" placeholder="Endereço"  id="endereco"/>
+                        
+                    </label>
+                   
+                    <button type="button" class="btn btn-second" onclick="register()" id="register-button">
+                        Confirmar
+                    </button>
+                    
+                </form>
+                <div id="loading" style="display: none; position: fixed; top: 8%; text-align: center; width: 180px; left: 50%; transform: translate(-50%, -50%); background-color: rgba(243, 170, 34, 0.8);; padding: 20px; border-radius: 10px; z-index: 1000;">
+                  <!-- Aqui você pode adicionar o seu indicador de carregamento, como uma animação ou uma mensagem -->
+                  Carregando...
+              </div>
+              
+              <div id="success-message" style="display: none; position: fixed; top: 8%; text-align: center; width: 320px; left: 50%; transform: translate(-50%, -50%); background-color: rgba(101, 219, 77, 0.8);; padding: 20px; border-radius: 10px; z-index: 1000;"">
+                  Cadastro realizado com sucesso!
+              </div>
+
+                <div id="auth-message"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    
+   
+
+    <script src="register.js"></script>
+    <script src="loading.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-auth-compat.js"></script>
+    <script src="firebase.js"></script>
+       
+</body>
+
+</html>

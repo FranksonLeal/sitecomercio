@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comercial Leal Projeto</title>
+
+  <!-- Adicione os links para o CSS e o JavaScript -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="img/logo.png" alt="" />
+    </a>
+    <nav class="navbar">
+      <a href="#home">Início</a>
+      <a href="#sobre" class="scroll-link">Sobre</a>
+      <a href="#produtos" class="scroll-link">Produtos</a>
+      <a href="#contato" class="scroll-link"> Contatos</a>
+      <a href="#redesSociais" class="scroll-link">Redes sociais</a>
+    </nav>
+
+
+    <div class="icons">
+      <div class="fas fa-shopping-cart" id="cart-btn" data-count="0"></div>
+      <div id="cart-notification">0</div>
+
+      <!-- Ícone circular para o usuário -->
+      <div id="user-profile" class="user-initial" style="display: none;"></div>
+
+      <!-- Botão "Entrar" -->
+      <button id="entrarbtn" class="entrarbtn">Entrar</button>
+    </div>
+
+
+    <div id="userModal" class="modal4">
+      <div class="modal-content4">
+        <span class="close">&times;</span>
+        <!-- Botão de fechar -->
+        <h2>Meu perfil</h2>
+        <ul class="button-list">
+          <li><button id="viewProfileBtn">Ver dados cadastrais</button></li>
+          <li><button id="viewHistoricBtn">Histórico de compras</button></li>
+          <li><button id="logoutBtn">Sair</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="historicModal" class="modal12">
+      <div class="modal-content12">
+        <span class="close12">&times;</span>
+        <h2>Histórico de pedidos</h2>
+        <div id="historicDetails"></div>
+      </div>
+    </div>
+
+
+  </header>
+
+  <section class="home" id="home">
+    <div class="content">
+        <h3>Comercial Leal</h3>
+        <p>
+            Comércio varejista e atacadista de produtos alimentícios e iogurtes
+            fazendinha em Itacoatiara, Amazonas.
+        </p>
+        <div style="color: #e77c1c;">
+            <i class="fa fa-phone icon-phone" id="phoneIcon1"></i>
+            <span class="numero-telefone">(92) 99114-9103</span>
+            <br>
+            <i class="fa fa-phone icon-phone" id="phoneIcon2"></i>
+            <span class="numero-telefone">(92) 99446-6479</span>
+        </div>
+        <div class="share2">
+            <a href="https://www.facebook.com/sua_pagina" class="fab fa-facebook-f"></a>
+            <a href="https://www.instagram.com/sua_pagina" class="fab fa-instagram"></a>
+        </div>
+
+        <div class="horario">
+            <h4>Horários de Funcionamento:</h4>
+            <p>Segunda à sexta: das 8:00 às 12:30 e das 15:00 às 20:00</p>
+            <p>Sábados: das 8:00 às 13:00 e das 15:00 às 20:00</p>
+            <p id="statusHorario" class="aberto"></p>
+        </div>
+    </div>
+</section>
+
+
+
+  <section class="about" id="sobre">
+    <h1 class="heading"><span>Sobre</span> Nós</h1>
+    <div class="row">
+      <div class="image">
+        <img src="img/comercio.jpg" alt="" />
+      </div>
+      <div class="content">
+        <h3>Um pouco sobre nossa empresa</h3>
+        <p>
+          Comercial Leal é uma empresa de pequeno porte localizada no
+          município de Itacoatiara no estado do Amazonas. Trabalhamos
+          principalmente com produtos da marca fazendinha, sendo eles iogurtes
+          e sucos produzidos na própria região.
+        </p>
+        <p>
+          Somos os únicos representantes da marca no município e nos
+          municípios vizinhos, trabalhando com honestidade, responsabilidade e
+          lealdade aos nossos clientes.
+        </p>
+        <p>
+          Atendemos nos município vizinhos e em toda a cidade de Itacoatiara-AM. Entre em contato conosco e conheça mais
+          sobre nossos produtos.
+        </p>
+        <button class="btnMissaoVisao" id="openMissionVisionValues">Saiba mais</button>
+
+        <!-- Modal para Missão, Visão e Valores -->
+
+      </div>
+    </div>
+
+    <h1 class="heading">Nossos <span>Produtos</span></h1>
+  </section>
+
+  <div id="missionVisionValuesModal" class="modal8">
+    <div class="modal-content8">
+      <span class="close8">&times;</span>
+      <div class="section">
+        <i class="fas fa-bullseye" style="color: #ff6347;"></i>
+        <h2>Nossa missão</h2>
+      </div>
+      <p>Fornecer produtos de qualidade aos nossos clientes, garantindo a satisfação.</p>
+      <div class="section">
+        <i class="fas fa-eye" style="color: #4682b4;"></i>
+        <h2>Nossa visão</h2>
+      </div>
+      <p1>Ser referência na região sobre a distribuição dos produtos.</p1>
+      <div class="section">
+        <i class="fas fa-heart" style="color: #32cd32;"></i>
+        <h2>Nossos valores</h2>
+      </div>
+      <p2>Lealdade, comprometimento, respeito, ética e sustentabilidade.</p2>
+    </div>
+  </div>
+
+
+
+  <section class="menu" id="produtos">
+    <div class="box-container" id="iogurtes-container"></div>
+  </section>
+
+  <section class="contact" id="localizacao">
+    <h1 class="heading"><span>Nosso</span> Endereço</h1>
+    <div class="row">
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8441418814623!2d-58.44470872633795!3d-3.135843440442185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926f557d9f5be451%3A0xcf62de97cafe292e!2sComercial%20Leal!5e0!3m2!1spt-BR!2sbr!4v1706621333191!5m2!1spt-BR!2sbr"
+        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <h1 class="heading"><span>Entrar em</span> contato</h1>
+    <div class="row">
+
+      <form id="contact-form">
+        <div class="inputBox">
+          <span class="fas fa-user"></span>
+          <input type="text" id="name" placeholder="Nome" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-envelope"></span>
+          <input type="email" id="email" placeholder="Email" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-phone"></span>
+          <input type="tel" id="phone" placeholder="Telefone" />
+        </div>
+        <div class="inputBox">
+          <span class="fas fa-map-marker-alt"></span>
+          <input type="text" id="address" placeholder="Endereço" />
+        </div>
+        <button type="button" id="send-message-btn" class="btn">
+          Enviar mensagem pelo whatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <section class="carrinho" id="carrinho">
+    <h1 class="heading"><span>Seu</span> carrinho</h1>
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-items">
+          <!-- Os produtos serão adicionados dinamicamente aqui -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <aside>
+    <div class="box">
+      <header>Resumo da compra</header>
+      <div class="info">
+        <div><span>Sub-total</span><span id="subtotal">R$ 0</span></div>
+        <div><span>Frete</span><span>Gratuito</span></div>
+
+      </div>
+      <footer>
+        <span>Total</span>
+        <span id="total">R$ 0</span>
+      </footer>
+    </div>
+    <button id="finalizar-compra-btn">Finalizar Compra</button>
+  </aside>
+
+  <script>
+    // Seleciona o ícone do carrinho
+    const cartBtn = document.getElementById("cart-btn");
+
+    cartBtn.addEventListener("click", function () {
+      const carrinhoSection = document.getElementById("carrinho");
+
+      const carrinhoSectionTop = carrinhoSection.offsetTop;
+
+      window.scrollTo({
+        top: carrinhoSectionTop,
+        behavior: "smooth",
+      });
+    });
+  </script>
+
+  <div id="finalizarCompraModal" class="modal9">
+    <div class="modal-content9">
+      <span class="close9" id="closeFinalizarCompraModalBtn">&times;</span>
+      <div class="form-container">
+        <h2>Finalizar Compra</h2>
+        <!-- Adicione este elemento para exibir o total da compra -->
+        <p id="total-compra-modal">Total da Compra: R$ 0.00</p>
+        <form id="finalizarCompraForm">
+          <label for="nome-usuario">Nome:</label>
+          <input type="text" id="nome-usuario" placeholder="Seu nome" />
+          <label for="endereco-usuario">Endereço:</label>
+          <input type="text" id="endereco-usuario" placeholder="Seu endereço" />
+          <label for="buscar-na-loja">Buscar na Loja:</label>
+          <input type="checkbox" id="buscar-na-loja" />
+          <label for="tipo-pagamento">Tipo de Pagamento:</label>
+          <select id="tipo-pagamento">
+            <option value="PIX">PIX</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão de crédito">Cartão de Crédito</option>
+            <option value="Cartão de débito">Cartão de Débito</option>
+
+          </select>
+          <!-- Campo para inserir valor em dinheiro, inicialmente oculto -->
+          <div id="valor-dinheiro-container" style="display: none;">
+            <label for="valor-dinheiro">Valor Pago:</label>
+            <input type="number" id="valor-dinheiro" placeholder="Digite o valor em dinheiro" />
+          </div>
+          <script>
+            // Seleciona o tipo de pagamento e o container do valor em dinheiro
+            const tipoPagamentoSelect = document.getElementById("tipo-pagamento");
+            const valorDinheiroContainer = document.getElementById("valor-dinheiro-container");
+
+            // Adiciona um evento de mudança para o tipo de pagamento
+            tipoPagamentoSelect.addEventListener("change", function () {
+              // Verifica se a opção selecionada é "Dinheiro"
+              if (tipoPagamentoSelect.value === "Dinheiro") {
+                valorDinheiroContainer.style.display = "block"; // Mostra o campo
+              } else {
+                valorDinheiroContainer.style.display = "none"; // Oculta o campo
+              }
+            });
+          </script>
+
+
+          <button type="button" id="enviar-pedido-btn">Enviar Pedido</button>
+          <button type="button" id="finalizar">Finalizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de autenticação -->
+  <div id="authModal" class="modal2">
+    <div class="modal-content">
+      <p>
+        Você precisa fazer login para prosseguir ao seu carrinho de compras.
+      </p>
+      <button id="loginModalBtn">Fazer Login</button>
+      <button id="closeModalBtn">Fechar</button>
+    </div>
+  </div>
+
+  <!-- Modal para exibir os dados do usuário -->
+  <div id="userDataModal" class="modal3">
+    <div class="modal-content3">
+      <span class="close3">&times;</span>
+      <h2>Dados do Usuário</h2>
+      <form id="userDataForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" readonly />
+        <label for="email">Email:</label>
+        <input type="email" id="emaill" name="emaill" readonly />
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" readonly />
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" readonly />
+        <div class="buttons5">
+          <button type="button" id="editButton">Editar</button>
+          <button type="submit" id="saveButton" style="display: none">
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <section class="footer" id="redesSociais">
+    <div class="share">
+      <a href="https://www.facebook.com/sua_pagina" class="fab fa-facebook-f"></a>
+      <a href="https://www.instagram.com/sua_pagina" class="fab fa-instagram"></a>
+    </div>
+    <div class="links">
+      <a href="#home">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#contato">Contatos</a>
+      <a href="#redesSociais">Redes sociais</a>
+    </div>
+    <div class="credit">
+      created by <span>Frankson Leal</span> | Direitos reservados
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="noty.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/countup.js@2.0.8/dist/countUp.umd.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Adiciona um evento de clique ao botão de envio de mensagem
+      const sendMessageBtn = document.getElementById("send-message-btn");
+      if (sendMessageBtn) {
+        sendMessageBtn.addEventListener("click", function () {
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const address = document.getElementById("address").value;
+
+          // Verifica se todos os campos estão preenchidos
+          if (!name || !email || !phone || !address) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+          }
+
+          const message = `Nome: ${name}\nEmail: ${email}\nTelefone: ${phone}\nEndereço: ${address}`;
+
+          const phoneNumber = "5592991149103";
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+            message
+          )}`;
+
+          // Abre o link do WhatsApp para enviar a mensagem
+          window.open(whatsappUrl, "_blank");
+        });
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+:root{
+    --main-color:#d3ad7f;
+    --black:#000000;
+    --bg:#010103;
+    --border:.1rem solid #e77c1c;
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #e77c1c;
+    border-radius: 5rem;
+}
+
+body{
+    background: #ecf0f1;
+    transition: background-color 0.5s ease-in-out;
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.heading{
+    margin-top: 90px;
+    text-align: center;
+    color:#000000;
+    text-transform: uppercase;
+    padding-bottom: 3.5rem;
+    font-size: 4rem;
+}
+
+.heading span{
+    color:var(--black);
+    text-transform: uppercase;
+}
+
+.btn{
+    border-radius: 20px;
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.9rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: #e77c1c;
+    cursor: pointer;
+}
+
+.btn:hover{
+    letter-spacing: .2rem;
+}
+
+.header{
+    height: 100px;
+    background:#e77c1c;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1.5rem 7%;
+    border-bottom: var(--border);
+    position: fixed;
+    top:0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.header .logo img{
+    height: 15rem;
+}
+
+.header .navbar a{
+    padding: .3rem 2rem;
+    color: #ffffff;
+    border: var(--border);
+    font-size: 2rem;
+    
+}
+
+.header .navbar a:hover{
+    color:var(--main-color);
+    border-bottom: .1rem solid var(--main-color);
+    padding-bottom: .5rem;
+}
+
+
+.footer{
+    background:rgba(34,34,34);
+    text-align: center;
+}
+
+.footer .share{
+    padding:1rem 0;
+}
+
+.footer .share a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:#ffffff;
+    margin:.3rem;
+    border-radius: 50%;
+}
+
+.footer .share a:hover{
+    background-color: var(--main-color);
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:2rem 0;
+    gap:1rem;
+}
+
+.footer .links a{
+    padding:.7rem 2rem;
+    color:#ffffff;
+    /*border:var(--border);*/
+    font-size: 2rem;
+}
+
+.footer .links a:hover{
+    background:var(--main-color);
+}
+
+.footer .credit{
+    font-size: 2rem;
+    color:#ffffff;
+    font-weight: lighter;
+    padding:1.5rem;
+}
+
+.footer .credit span{
+    color:var(--main-color);
+}
+
+/* Estilo para as tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo para as células de cabeçalho */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para as células de dados */
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Estilo para linhas ímpares */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para a primeira coluna das tabelas */
+td:first-child,
+th:first-child {
+    border-left: none;
+}
+
+/* Estilo para a última coluna das tabelas */
+td:last-child,
+th:last-child {
+    border-right: none;
+}
+
+/* Estilo para o formulário de cadastro */
+#product-form {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#product-form h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+#product-form .inputBox {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#product-form .inputBox input[type="file"],
+#product-form .inputBox input[type="text"],
+#product-form .inputBox input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#product-form .btn {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#product-form .btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para as tabelas de produtos e clientes */
+#product-table,
+#client-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#product-table th,
+#product-table td,
+#client-table th,
+#client-table td {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#product-table th,
+#client-table th {
+    font-size: 14px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+#product-table tbody tr:nth-child(odd),
+#client-table tbody tr:nth-child(odd) {
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+#product-table td:first-child,
+#product-table th:first-child,
+#client-table td:first-child,
+#client-table th:first-child {
+    font-size: 14px;
+    border-left: none;
+}
+
+#product-table td:last-child,
+#product-table th:last-child,
+#client-table td:last-child,
+#client-table th:last-child {
+    font-size: 14px;
+    border-right: none;
+}
+
+
+/* Estilo para a imagem na tabela de produtos */
+#product-table img {
+    max-width: 100px; /* Defina a largura máxima da imagem */
+    max-height: 100px; /* Defina a altura máxima da imagem */
+    width: auto; /* Permita que a largura da imagem seja ajustada automaticamente */
+    height: auto; /* Permita que a altura da imagem seja ajustada automaticamente */
+    display: block; /* Garanta que a imagem não afete o layout da tabela */
+    margin: 0 auto; /* Centralize a imagem horizontalmente na célula da tabela */
+}
+
+
+/* Estilos para a tabela de produtos */
+#product-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#product-table th,
+#product-table td {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#product-table th {
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+
+/* Estilo para a tabela de clientes */
+#client-table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 100%;
+    overflow-x: auto; /* Adicionando rolagem horizontal */
+}
+
+#client-table th,
+#client-table td {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#client-table th {
+    font-size: 14px;
+    background-color: #f2f2f2;
+}
+
+/* Adicionando regras de estilo para tornar a tabela responsiva */
+@media only screen and (max-width: 468px) {
+    /* Ajuste do tamanho das células para dispositivos móveis */
+    #client-table th,
+    #client-table td {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    
+}
+
+
+/* Estilização para o campo de imagem na tabela de produtos */
+#product-table td:first-child {
+    width: 250px; /* Defina a largura desejada */
+}
+
+/* Botões de Editar e Excluir */
+.btn-editar,
+.btn-excluir {
+    padding: 8px 16px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-editar {
+    background-color: #e77c1c; /* Azul */
+}
+
+.btn-editar:hover {
+    background-color: #a34d01; /* Tom mais escuro de azul */
+}
+
+.btn-excluir {
+    background-color: #e03636; /* Vermelho */
+}
+
+.btn-excluir:hover {
+    background-color: #b81414; /* Tom mais escuro de azul */
+}

@@ -1,0 +1,2257 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+:root {
+  --main-color: #d3ad7f;
+  --black: #000000;
+  --bg: #010103;
+  --border: 0.1rem solid #e77c1c;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 9rem;
+  scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #e77c1c;
+  border-radius: 5rem;
+}
+
+body {
+  background: #ecf0f1;
+  transition: background-color 0.5s ease-in-out;
+}
+
+section {
+  padding: 2rem 10%;
+}
+
+.heading {
+  margin-top: 90px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading span {
+  color: var(--black);
+  text-transform: uppercase;
+}
+
+.btn {
+  width: 200px;
+  margin-bottom: 20px;
+  text-transform: none;
+  border-radius: 20px;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1.9rem 3rem;
+  font-size: 1.7rem;
+  color: #fff;
+  background: #e77c1c;
+  cursor: pointer;
+}
+
+.btnMissaoVisao {
+  width: 200px;
+  margin-left: 25%;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  color: #fff;
+  background: #e77c1c;
+  font-size: 1.7rem;
+  padding: 10px 50px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: 1rem;
+}
+
+.btn:hover {
+  letter-spacing: 0.2rem;
+}
+
+.header {
+  height: 100px;
+  background: #e77c1c;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 7%;
+  border-bottom: var(--border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header .logo img {
+  height: 15rem;
+}
+
+.header .navbar a {
+  padding: 0.3rem 2rem;
+  color: #ffffff;
+  border: var(--border);
+  font-size: 2rem;
+}
+
+.header .navbar a:hover {
+  color: var(--main-color);
+  border-bottom: 0.1rem solid var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+.header .icons div {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 2.5rem;
+  margin-right: 2rem;
+}
+
+.header .icons div:hover {
+  color: var(--main-color);
+}
+
+#menu-btn {
+  display: none;
+}
+
+.header .search-form {
+  position: absolute;
+  top: 115%;
+  right: 7%;
+  background: #fff;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.header .search-form.active {
+  transform: scaleY(1);
+}
+
+.header .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--black);
+  padding: 1rem;
+  text-transform: none;
+}
+
+.header .search-form label {
+  cursor: pointer;
+  font-size: 2.2rem;
+  margin-right: 1.5rem;
+  color: var(--black);
+}
+
+.header .search-form label:hover {
+  color: var(--main-color);
+}
+
+.header .cart-items-container {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: calc(100vh - 9.5rem);
+  width: 35rem;
+  background: #fff;
+  padding: 0 1.5rem;
+}
+
+.header .cart-items-container.active {
+  right: 0;
+}
+
+.header .cart-items-container .cart-item {
+  position: relative;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header .cart-items-container .cart-item .fa-times {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--black);
+}
+
+.header .cart-items-container .cart-item .fa-times:hover {
+  color: var(--main-color);
+}
+
+.header .cart-items-container .cart-item img {
+  height: 7rem;
+}
+
+.header .cart-items-container .cart-item .content h3 {
+  font-size: 2rem;
+  color: var(--black);
+  padding-bottom: 0.5rem;
+}
+
+.header .cart-items-container .cart-item .content .price {
+  font-size: 1.5rem;
+  color: var(--main-color);
+}
+
+.header .cart-items-container .btn {
+  width: 100%;
+  text-align: center;
+}
+
+.home {
+  border-radius: 20px;
+  min-height: 100vh;
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza verticalmente */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  background: rgba(3, 0, 12, 0.9) url(../img/comercio.jpg) no-repeat;
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  padding: 20px; /* Adiciona um pouco de espaçamento */
+}
+
+.home .content {
+  max-width: 100rem;
+  
+  border-radius: 15px; /* Arredonda os cantos */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para um efeito de profundidade */
+}
+
+.home .content h3 {
+  font-size: 6rem;
+  text-transform: uppercase;
+  color: #ffffff; /* Mudou para um cinza escuro para maior contraste */
+}
+
+.home .content p {
+  text-transform: none;
+  font-size: 3.2rem;
+  font-weight: lighter;
+  line-height: 1.8;
+  padding: 1rem 0;
+  color: #ffffff; /* Mudou para um cinza escuro para maior contraste */
+}
+
+.horario {
+  margin-top: 20px; /* Espaço acima da seção de horários */
+  font-size: 2.2rem; /* Tamanho do texto dos horários */
+}
+
+.horario h4 {
+  margin-bottom: 10px; /* Espaço abaixo do título */
+  font-weight: bold; /* Título em negrito */
+}
+
+#statusHorario {
+  margin-top: 10px; /* Espaço acima do status */
+  font-size: 2.5rem; /* Tamanho do texto do status */
+  font-weight: bold; /* Negrito para destaque */
+}
+
+.aberto {
+  color: green !important; /* Garantir que a cor verde seja aplicada */
+}
+
+.fechado {
+  color: red !important; /* Garantir que a cor vermelha seja aplicada */
+}
+
+.horario p {
+  font-size: 1.8rem !important; /* Garantir que a cor vermelha seja aplicada */ /* Ajuste o tamanho conforme necessário */
+}
+
+
+
+
+.icon-phone {
+  padding: 20px;
+
+  font-size: 20px;
+  color: #e77c1c;
+  border-radius: 50%;
+}
+
+.icon-phone:hover {
+  background-color: var(--main-color);
+}
+
+
+.numero-telefone {
+  font-weight: lighter;
+  font-size: 2.2rem;
+  /* Defina o tamanho desejado para os números de telefone */
+}
+
+
+.home .share2 a {
+  padding: 20px;
+  font-size: 2rem;
+  color: #e77c1c;
+  margin: 0.rem;
+  border-radius: 50%;
+}
+
+.home .share2 a:hover {
+  background-color: var(--main-color);
+}
+
+
+
+/* SEÇÃO SOBRE */
+.about .row {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  /* Espaçamento entre as linhas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra suave */
+}
+
+/* section.about {
+  
+} */
+
+.about .row .image {
+  flex: 1 1 45rem;
+}
+
+.about .row .image img {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+}
+
+.about .row .content h3 {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  font-size: 2.5rem;
+  color: #333333;
+  /* Cor de texto mais escura */
+}
+
+.about .row .content p {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 25px;
+  margin-right: 40px;
+  margin-left: 40px;
+  text-align: justify;
+  font-size: 1.8rem;
+  color: #666666;
+  /* Cor de texto mais suave */
+  line-height: 1.8;
+}
+
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+
+/* MODAL DE MISSAO, VISAO E VALORES */
+.modal8 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para melhor foco no modal */
+  backdrop-filter: blur(5px); /* Adiciona um leve desfoque ao fundo */
+  transition: opacity 0.3s ease; /* Transição suave de abertura */
+}
+
+.modal8.active {
+  display: block;
+  opacity: 1;
+}
+
+.modal-content8 {
+  background-color: #f9f9f9;
+  margin: 5% auto;
+  padding: 40px;
+  border-radius: 12px;
+  width: 70%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza a transição */
+}
+
+.modal-content8 h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.modal-content8 .section i {
+  margin-top: 30px;
+  margin-right: 10px;
+  font-size: 24px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: #34495e; /* Ícones em uma cor mais neutra */
+}
+
+.modal-content8 p, 
+.modal-content8 p1, 
+.modal-content8 p2 {
+  color: #7f8c8d;
+  font-size: 18px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify; /* Alinhamento justificado para um layout mais organizado */
+}
+
+.modal-content8 p {
+  color: #e74c3c; /* Cor para a seção de 'Missão' */
+}
+
+.modal-content8 p1 {
+  color: #3498db; /* Cor para a seção de 'Visão' */
+}
+
+.modal-content8 p2 {
+  color: #2ecc71; /* Cor para a seção de 'Valores' */
+}
+
+.close8 {
+  color: #bdc3c7;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease; /* Transição suave ao passar o mouse */
+}
+
+.close8:hover {
+  color: #e74c3c; /* Destaque vermelho ao passar o mouse */
+}
+
+@media (max-width: 768px) {
+  .modal-content8 {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content8 h2 {
+    font-size: 22px;
+  }
+
+  .modal-content8 p, 
+  .modal-content8 p1, 
+  .modal-content8 p2 {
+    font-size: 16px;
+  }
+}
+/* 
+Fim do modal de missao, visao e valores */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+
+/* Inicio da Seção dos produtos */
+
+/* Estilização para os produtos na seção de menu */
+.box-container {
+  width: 245px;
+  /* largura do contêiner do produto */
+  margin: 10px;
+  /* margem entre os produtos */
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  /* borda ao redor do contêiner do produto */
+  text-align: center;
+  /* centraliza o conteúdo dentro do contêiner */
+  display: inline-block;
+  /* alinha os produtos horizontalmente */
+}
+
+/* Estilização para a imagem do produto */
+.box-container img {
+  height: 20rem;
+}
+
+
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Centraliza os produtos horizontalmente */
+  gap: 2rem; /* Espaçamento entre os produtos */
+  padding: 2rem;
+  margin: 0 auto;
+  /* Centraliza o contêiner no meio da tela */
+}
+
+/* Estilização para os produtos na seção de menu */
+.box-container {
+  width: 245px; /* largura do contêiner do produto */
+  padding: 2rem;
+  border: 1px solid #ccc; /* borda ao redor do contêiner do produto */
+  border-radius: 20px;
+  background-color: white;
+  text-align: center; /* centraliza o conteúdo dentro do contêiner */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilização para a imagem do produto */
+.box-container img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* Estilização para o nome do produto */
+.box-container h3 {
+  text-transform: none; /* Impede a transformação do texto para maiúsculas */
+  color: #000000;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+/* Estilização para a descrição do produto */
+.box-container p {
+  color: #000000;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+/* Centraliza o contêiner de produtos no layout */
+.menu .box-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+}
+
+
+/* Estilização para o nome do produto */
+.box-container h3 {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: #000000;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+.box-container p {
+  color: #000000;
+  font-size: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.menu .box-container {
+  align-items: center;
+  border-radius: 20px;
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  border: var(--border);
+}
+
+/* Fim da Seção dos produtos */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+
+/*Inicio da Seção dos contatos*/
+.contact .row {
+  border-radius: 20px;
+  display: flex;
+  background: white;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact .row .map {
+  border-radius: 20px;
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  border-radius: 20px;
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form h3 {
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  color: #000000;
+}
+
+.contact .row form .inputBox {
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  border: var(--border);
+}
+
+.contact .row form .inputBox span {
+  color: #000000;
+  font-size: 2rem;
+  padding-left: 2rem;
+}
+
+.contact .row form .inputBox input {
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  color: rgb(34, 34, 34);
+  text-transform: none;
+  background: none;
+}
+
+/*Seção do menu inferior - REDES SOCIAIS*/
+
+.footer {
+  background: rgba(34, 34, 34);
+  text-align: center;
+}
+
+.footer .share {
+  padding: 1rem 0;
+}
+
+.footer .share a {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2rem;
+  color: #ffffff;
+  margin: 0.3rem;
+  border-radius: 50%;
+}
+
+.footer .share a:hover {
+  background-color: var(--main-color);
+}
+
+.footer .links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.footer .links a {
+  padding: 0.7rem 2rem;
+  color: #ffffff;
+  /*border:var(--border);*/
+  font-size: 2rem;
+}
+
+.footer .links a:hover {
+  background: var(--main-color);
+}
+
+.footer .credit {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: lighter;
+  padding: 1.5rem;
+}
+
+.footer .credit span {
+  color: var(--main-color);
+}
+
+#cart-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+ 
+  
+  /* Hide initially */
+}
+
+
+
+/* Estilos para o modal de autenticação */
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 9999;
+  border: 1px solid #ccc;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+
+/* ----------------------------------------------------------------------------------- */
+
+/* Início da seção de carrinho de compra */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+table thead tr {
+  border-bottom: 2px solid #ddd; /* Borda mais suave */
+  background-color: #f0f0f0; 
+}
+
+table thead th {
+  text-transform: none;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 8px;
+  color: #333; /* Tom mais escuro para contraste */
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+/* Estilo para as linhas da tabela */
+table tbody tr {
+  border-bottom: 1px solid #e0e0e0; 
+}
+
+/* Remove a borda inferior da última linha da tabela */
+table tbody tr:last-child {
+  border-bottom: none;
+}
+
+table tbody tr td {
+  text-transform: none;
+  text-align: center;
+  font-size: 14px;
+  padding: 15px 12px;
+  color: #555;
+}
+
+table tbody tr td img {
+  max-width: 80%; /* Imagens responsivas */
+  border-radius: 5px; /* Bordas arredondadas nas imagens */
+}
+
+/* Células de imagem */
+table tbody tr td:first-child {
+  width: 100px;
+
+  font-size: 14px;
+  color: #e77c1c;
+}
+
+/* Células de preço */
+table tbody tr td:nth-child(3) {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Células de quantidade */
+table tbody tr td:nth-child(4) {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Estilizando a quantidade e os botões */
+.qty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qty button:hover {
+  background-color: #0056b3;
+}
+
+.qty span {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0 8px;
+}
+
+input.quantity {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  text-align: center;
+  width: 50px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Células de total */
+table tbody tr td:nth-child(5) {
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Células de ação */
+table tbody tr td:nth-child(6) {
+  text-align: center;
+}
+
+/* Botões de remover */
+.remove {
+  background: #ddd;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
+
+.remove:hover {
+  background: #a7a7a7;
+}
+
+/* Adicionando responsividade */
+
+/* Para tablets */
+@media (max-width: 768px) {
+  table tbody tr td {
+    padding: 10px;
+  }
+
+  .qty button {
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+
+  .qty span {
+    width: 25px;
+    font-size: 12px;
+  }
+
+  input.quantity {
+    width: 40px;
+  }
+}
+
+/* Para smartphones */
+@media (max-width: 450px) {
+  html {
+    font-size: 45%; /* Ajusta o tamanho da fonte geral */
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Esconde o cabeçalho da tabela */
+  table thead {
+    display: none;
+  }
+
+  /* Cada linha do tbody será um bloco separado */
+  table tbody tr {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  table tbody tr td {
+    padding: 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  table tbody tr td img {
+    width: 80px;
+  }
+
+  .qty {
+    justify-content: space-around;
+  }
+
+  .cart-total {
+    font-size: 1.5rem;
+    text-align: right;
+    margin-top: 1rem;
+  }
+
+  .remove {
+    width: 25px;
+    height: 25px;
+    font-size: 16px;
+  }
+}
+
+/* Término da seção de carrinho de compra */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+.product {
+  display: flex;
+  align-items: center;
+}
+
+.product img {
+  border-radius: 6px;
+  max-width: 80px;
+}
+
+.product .info {
+  margin-left: 20px;
+}
+
+.product .info .name {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.product .info .price {
+  font-size: 14px;
+  color: #28a745;
+}
+
+.qty {
+  display: flex;
+  align-items: center;
+}
+
+.qty span {
+  margin: 0 10px;
+  font-size: 14px;
+}
+
+.qty button {
+  background: #eee;
+  border: 1px solid #ccc;
+  color: #666;
+  font-size: 15px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qty button:hover {
+  background: #ddd;
+}
+
+.proceed-btn {
+  border: none;
+  padding: 15px 0;
+  color: white;
+  background: #28a745;
+  display: block;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.proceed-btn:hover {
+  background: #3bc55b;
+}
+
+aside {
+  margin: 0 auto;
+  /* Centraliza o aside na tela */
+  width: 90%;
+  /* Define a largura do aside */
+  max-width: 1600px;
+  /* Define a largura máxima do aside */
+}
+
+aside .box {
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  background: #eee;
+  color: #222;
+}
+
+aside .box header {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  padding: 15px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+aside .box .info {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  padding: 20px;
+  font-size: 15px;
+}
+
+aside .box .info>div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+aside .box .info>div:last-child {
+  margin: 0;
+}
+
+aside .box .info button {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: #28a745;
+  background: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+aside .box footer {
+  padding: 15px 20px;
+  background: #ddd;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+aside>button {
+  margin-bottom: 100px;
+  border: 0;
+  padding: 15px 0;
+  color: white;
+  background: #28a745;
+  display: block;
+  width: 100%;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-size: 15px;
+}
+
+aside>button:hover {
+  background: #3bc55b;
+}
+
+
+
+
+#cart-notification {
+  position: relative;
+  /* Alterado para absolute */
+  top: 10%;
+  margin: 0%;
+  /* Centralizado verticalmente */
+  transform: translateY(-50%);
+  /* Centralizado verticalmente */
+  right: 15%;
+  /* Distância ajustável do ícone do carrinho */
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 50%;
+  min-width: 20px;
+  text-align: center;
+ 
+  /* Garante que a notificação esteja sempre acima dos outros elementos */
+}
+
+
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+/*SEÇÃO DO MODAL DE OPÇÕES DE USUÁRIO*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  border-radius: 10px;
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  position: relative;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.button-list {
+  list-style: none;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  padding: 0;
+}
+
+.button-list li {
+  margin-bottom: 10px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+}
+
+.button-list li button {
+  font-size: 16px;
+  width: 50%;
+  margin-top: 50px;
+  padding: 15px 20px;
+  background-color: #e77c1c;
+  color: white;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-list li button:hover {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  background-color: #af5607;
+}
+
+
+
+/* ----------------------------------------------------------------------------------- */
+
+
+
+
+
+/* Estilos para o modal de autenticação */
+.modal2 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para foco no modal */
+  backdrop-filter: blur(5px); /* Efeito de desfoque para sofisticação */
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #e77c1c; /* Cor de fundo mais vibrante */
+  margin: 8% auto;
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  animation: modalAppear 0.4s ease-out; /* Animação de entrada */
+}
+
+/* Animação de entrada */
+@keyframes modalAppear {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilo para parágrafos */
+.modal-content p {
+  color: white;
+  text-transform: none;
+  font-size: 20px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 35px;
+}
+
+/* Estilo do formulário */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo dos rótulos */
+.modal-content label {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: #fff; /* Cor do texto dos rótulos */
+}
+
+/* Estilo dos inputs e selects */
+.modal-content input[type="text"],
+.modal-content input[type="password"],
+.modal-content select {
+  width: 80%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.modal-content input[type="text"]:focus,
+.modal-content input[type="password"]:focus,
+.modal-content select:focus {
+  border-color: #f9a825; /* Cor da borda ao focar */
+}
+
+/* Estilo do container da checkbox */
+.modal-content .checkbox-container {
+  display: flex;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo da checkbox */
+.modal-content input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* Estilo do botão */
+.modal-content button {
+  font-size: 18px;
+  width: 60%;
+  padding: 15px 0;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #f9a825;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.modal-content button:hover {
+  background-color: #f9a825; /* Muda a cor ao passar o mouse */
+  color: white; /* Texto branco ao passar o mouse */
+}
+
+/* Estilo do título dentro do modal */
+.modal-content h2 {
+  text-transform: none;
+  font-size: 26px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 20px;
+  color: #333; /* Cor do título */
+}
+
+/* Estilo para total de compra no modal */
+.modal-content #total-compra-modal {
+  text-transform: none;
+  font-size: 20px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 30px;
+  color: #333; /* Cor do texto */
+}
+
+/* Fim do modal de autenicao quando o ususario clicar em finalizar */
+
+
+/* ----------------------------------------------------------------------------------- */
+
+/* INICIO DO MODAL DE DADOS CADASTRAIS */
+.modal3 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para foco no modal */
+  backdrop-filter: blur(5px); /* Efeito de desfoque para sofisticação */
+}
+
+/* Conteúdo do modal */
+.modal-content3 {
+  height: auto;
+  background-color: #ffffff; /* Fundo branco clássico */
+  margin: 10% auto;
+  padding: 40px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  border-radius: 15px;
+  max-width: 600px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+  animation: modalFadeIn 0.5s ease-out; /* Animação suave de entrada */
+}
+
+/* Animação suave */
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content3 h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  margin-top: 0;
+  
+  color: #333; /* Título com cor mais neutra e elegante */
+  text-transform: none; /* Texto sem transformação */
+  letter-spacing: 1px; /* Espaçamento suave entre letras */
+}
+
+/* Botão de fechar */
+.close3 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Transição suave no hover */
+}
+
+.close3:hover {
+  color: #333; /* Tom mais escuro no hover */
+}
+
+/* Estilos de formulário */
+.form-group {
+  margin-bottom: 25px;
+}
+
+label {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: #555; /* Texto do label com cor suave */
+  display: block;
+}
+
+/* Campos de entrada */
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  border-color: #008cba; /* Destaque no foco */
+  outline: none;
+}
+
+/* Botões */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.buttons button {
+  font-size: 16px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  color: white;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra leve para destaque */
+}
+
+/* Botão de editar */
+#editButton {
+  background-color: #008cba; /* Azul elegante */
+}
+
+#editButton:hover {
+  background-color: #005f7a; /* Azul escuro no hover */
+}
+
+/* Botão de salvar */
+#saveButton {
+  background-color: #f44336; /* Vermelho de alerta */
+}
+
+#saveButton:hover {
+  background-color: #b8322a; /* Vermelho mais escuro no hover */
+}
+
+/* FIM DO MODAL DE DADOS CADASTRAIS */
+
+
+
+
+
+/* BOTAO PARA O MODAL DE DADOS CADASTRAIS */
+.buttons5 button {
+  font-size: 15px;
+  width: 20%;
+  margin-top: 50px;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: #e77c1c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.buttons5 button:hover {
+  background-color: #995112;
+}
+
+
+
+
+
+
+/* MODAL DAS OPÇÕES DO ÍCONE USUÁRIO */
+.modal4 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para foco no modal */
+  backdrop-filter: blur(5px); /* Efeito de desfoque para sofisticação */
+}
+
+.modal-content4 {
+  background-color: #ffffff; /* Alterado para branco para maior contraste */
+  margin: 10% auto;
+  padding: 40px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Sombra suave e profissional */
+  animation: modalFadeIn 0.4s ease-out; /* Transição suave de entrada */
+}
+
+/* Animação suave para o modal */
+@keyframes modalFadeIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content4 h2 {
+  color: #333; /* Cor mais neutra e elegante */
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-transform: none; /* Remover qualquer transformação do texto */
+  letter-spacing: 1px; /* Suave espaçamento entre letras */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+.close:hover {
+  color: #333; /* Tom mais escuro ao passar o mouse */
+}
+
+/* Estilo dos parágrafos (opcional) */
+.modal-content4 p {
+  color: #666;
+  font-size: 18px;
+  margin-top: 20px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif; /* Fonte moderna */
+}
+
+/* Estilo dos botões */
+.modal-content4 button {
+  font-size: 18px;
+  padding: 12px 30px;
+  margin-top: 30px;
+  background-color: #e77c1c; /* Cor de destaque original */
+  color: #e77c1c;
+  border: none;
+  border-radius: 25px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais leve nos botões */
+}
+
+.modal-content4 button:hover {
+  background-color: #d6691a; /* Cor de destaque ao passar o mouse */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Aumentar a sombra no hover */
+}
+
+
+.button-list {
+  text-align: center;
+}
+
+.button-list li {
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 10px;
+}
+
+.button-list li button {
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 2px solid #e77c1c;
+  /* Adiciona uma borda branca de 2px */
+  color: #e77c1c;
+  cursor: pointer;
+}
+
+.button-list li button:hover {
+  background-color: #f2c59f;
+}
+
+
+/* FIM MODAL DAS OPÇÕES DO ÍCONE USUÁRIO */
+
+
+
+
+
+/* BOTÃO ENTRAR */
+.entrarbtn {
+  background-color: transparent;
+  /* Torna o fundo transparente */
+  border: 2px solid #fff;
+  /* Adiciona uma borda branca de 2px */
+  border-radius: 20px;
+  /* Adiciona bordas arredondadas */
+  color: #fff;
+  /* Define a cor do texto como branca */
+  padding: 10px 20px;
+  /* Adiciona espaçamento interno */
+  font-size: 16px;
+  /* Define o tamanho da fonte */
+  cursor: pointer;
+  /* Adiciona o cursor pointer */
+  margin-left: 10px;
+  /* Adiciona margem à esquerda para separar dos ícones */
+}
+
+.entrarbtn:hover {
+  background-color: #fff;
+  /* Muda a cor do fundo ao passar o mouse */
+  color: #000;
+  /* Muda a cor do texto ao passar o mouse */
+}
+
+/* Ícones */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+/* Ícone do usuário */
+#user-profile {
+  margin-left: auto;
+  /* Move o ícone de usuário para a extremidade direita */
+}
+
+/* ESTILOZAÇÃO PARA O MODAL DE FINALIZAR COMPRA */
+
+/* Estilos para o modal de finalização de compra */
+.modal9 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para dar contraste */
+  backdrop-filter: blur(5px); /* Adiciona desfoque no fundo */
+}
+
+.modal-content9 {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px; /* Limita a largura máxima em telas grandes */
+  text-align: center;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3); /* Sombra mais definida */
+  animation: modalAppear 0.4s ease-out; /* Animação suave de entrada */
+}
+
+/* Animação de entrada */
+@keyframes modalAppear {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content9 h2 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.modal-content9 p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.modal-content9 input[type="text"],
+.modal-content9 input[type="password"],
+.modal-content9 select {
+  width: 85%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.modal-content9 input[type="text"]:focus,
+.modal-content9 input[type="password"]:focus,
+.modal-content9 select:focus {
+  border-color: #e77c1c;
+  outline: none;
+}
+
+.modal-content9 .checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.modal-content9 input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.modal-content9 label {
+  font-size: 16px;
+  color: #333;
+}
+
+.modal-content9 #total-compra-modal {
+  font-size: 22px;
+  font-weight: 600;
+  color: #e77c1c;
+  margin-bottom: 25px;
+}
+
+.modal-content9 button {
+  font-size: 18px;
+  width: 70%;
+  padding: 15px 0;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #e77c1c;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content9 button:hover {
+  background-color: #cf6d19;
+  transform: translateY(-2px); /* Leve animação de hover */
+}
+
+.close9 {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.close9:hover {
+  color: #333;
+}
+
+/* Responsivo para telas pequenas */
+@media (max-width: 768px) {
+  .modal-content9 {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .modal-content9 button {
+    width: 100%; /* Botão ocupa toda a largura em dispositivos móveis */
+  }
+}
+
+
+
+/* Fim do modal de finalizar compra */
+
+
+
+/* Estilo para o modal de historico de compras*/
+.modal12 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo mais escuro */
+  backdrop-filter: blur(5px); /* Adiciona desfoque ao fundo */
+}
+
+/* Conteúdo do modal */
+.modal-content12 {
+  background-color: #fff;
+  margin: 8% auto;
+  padding: 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  animation: modalAppear 0.4s ease-out; /* Animação de entrada */
+}
+
+/* Animação de entrada */
+@keyframes modalAppear {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Estilo para o botão de fechar */
+.close12 {
+  color: #666;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close12:hover,
+.close12:focus {
+  color: #e77c1c; /* Muda a cor ao passar o mouse */
+}
+
+/* Estilo para o título dentro do modal */
+.modal-content12 h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Estilo para cada linha do histórico */
+.historic-row {
+  text-transform: none;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd; /* Altera a cor da borda */
+  position: relative; /* Para posicionar o ícone de exclusão */
+}
+
+/* Estilo para o ícone de exclusão */
+.historic-delete {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.historic-delete:hover {
+  color: red; /* Cor do ícone ao passar o mouse */
+}
+
+/* Estilo para o texto dentro do modal */
+.modal-content12 p,
+.modal-content12 ul,
+.modal-content12 li {
+  text-transform: none;
+  text-align: left;
+  font-size: 18px;
+  color: #444; /* Cor do texto */
+  line-height: 1.6; /* Aumenta o espaço entre linhas */
+}
+
+/* Estilo para a lista */
+.modal-content12 ul {
+  padding-left: 20px; /* Espaçamento à esquerda */
+  list-style: disc; /* Estilo de lista com marcadores */
+}
+
+
+/* Fim Estilo para o modal de historico de compras*/
+
+
+
+
+
+
+/* Adicione estas regras CSS no final do arquivo para o ícone de usuário */
+#userInitial {
+  display: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #555;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+/* Adicione esta regra CSS para esconder o botão de entrar quando o usuário estiver logado */
+.logged-in #entrarbtn {
+  display: none;
+}
+
+
+
+
+
+/* media queries  */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background: #fff;
+    width: 30rem;
+    height: calc(100vh - 9.5rem);
+  }
+
+  .header .navbar.active {
+    right: 0;
+  }
+
+  .header .navbar a {
+    color: var(--black);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .header .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  .home {
+    background-position: left;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home .content h3 {
+    font-size: 4.5rem;
+  }
+
+  .home .content p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 1.2rem 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+/* Seção de produtos */
+.produtos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Para telas grandes, 4 produtos por linha */
+  gap: 20px; /* Espaçamento entre os produtos */
+}
+
+@media (max-width: 991px) {
+  .produtos-container {
+    grid-template-columns: repeat(2, 1fr); /* Para telas médias, 2 produtos por linha */
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .produtos-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha para tablets */
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .produtos-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha para celulares */
+    gap: 15px; /* Ajuste o espaçamento para dispositivos móveis */
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
+
+
+.user-initial {
+  width: 40px; /* Largura do círculo */
+  height: 40px; /* Altura do círculo */
+  border-radius: 50%; /* Para tornar o elemento circular */
+  background-color: rgb(39, 38, 38); /* Cor de fundo do círculo */
+  color: white; /* Cor do texto */
+  display: flex; /* Para centralizar o texto */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  font-size: 18px; /* Tamanho da fonte */
+  cursor: pointer; /* Para indicar que é clicável */
+  text-align: center; /* Centraliza o texto */
+  margin-left: 10px; /* Espaço à esquerda do círculo */
+}
+
+#valor-dinheiro-container {
+  margin-top: 15px; /* Espaçamento superior */
+  padding: 10px; /* Espaçamento interno */
+  border: 1px solid #ccc; /* Borda do contêiner */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: #f9f9f9; /* Cor de fundo */
+}
+
+#valor-dinheiro {
+  width: 100%; /* Largura total do contêiner */
+  padding: 8px; /* Espaçamento interno do campo */
+  border: 1px solid #ccc; /* Borda do campo */
+  border-radius: 5px; /* Bordas arredondadas do campo */
+  font-size: 16px; /* Tamanho da fonte */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para o campo */
+}
+
+#valor-dinheiro:focus {
+  border-color: #841FFD; /* Cor da borda quando o campo está focado */
+  outline: none; /* Remove o contorno padrão */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos gerais da tabela */
+#cart-items {
+  width: 100%; /* A tabela ocupa 100% da largura do contêiner */
+  border-collapse: collapse; /* Remove espaços entre as bordas das células */
+}
+
+/* Células da tabela */
+#cart-items td, #cart-items th {
+  padding: 8px; /* Espaçamento interno nas células */
+  text-align: left; /* Alinhamento à esquerda do texto */
+  border-bottom: 1px solid #ddd; /* Borda inferior nas células */
+}
+
+/* Estilos para a mensagem quando não há produtos */
+#cart-items td[colspan="5"] {
+  text-align: center; /* Centraliza o texto da mensagem */
+  padding: 15px; /* Espaçamento interno para destaque */
+}
+
+/* Estilos das imagens dos produtos */
+#cart-items img {
+  height: 12rem; /* Altura padrão das imagens */
+  width: auto; /* Mantém a proporção */
+  max-width: 100%; /* Limita a largura máxima da imagem */
+}
+
+/* Contêiner da quantidade */
+.qty {
+  display: flex; /* Alinha os itens em linha */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+/* Botões de incrementar e decrementar */
+.increment, .decrement {
+  background-color: #f0f0f0; /* Cor de fundo dos botões */
+  border: 1px solid #ccc; /* Borda dos botões */
+  padding: 4px 8px; /* Espaçamento interno dos botões */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+}
+
+/* Estilos para a entrada de quantidade */
+.quantity {
+  border: 1px solid #ccc; /* Borda da entrada */
+  padding: 4px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  width: 60px; /* Largura da entrada de quantidade */
+}
+
+/* Botão de remover */
+.remove {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  #cart-items td, #cart-items th {
+      padding: 4px; /* Reduz ainda mais o padding nas células em dispositivos móveis */
+      font-size: 12px; /* Diminuir o tamanho da fonte */
+  }
+
+  #cart-items img {
+      height: 8rem; /* Diminuir a altura das imagens */
+  }
+
+  .quantity {
+      width: 40px; /* Largura menor para a entrada de quantidade */
+      font-size: 12px; /* Diminuir o tamanho da fonte na entrada de quantidade */
+  }
+
+  .increment, .decrement {
+      padding: 3px 6px; /* Reduz o padding dos botões */
+      font-size: 10px; /* Reduz o tamanho da fonte nos botões */
+  }
+}
+
+
+
+

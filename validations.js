@@ -1,0 +1,1 @@
+function validateEmail(a){return /\S+@\S+\.\S+/.test(a)}function onChangeNome(){}function onChangeEndereco(){}
