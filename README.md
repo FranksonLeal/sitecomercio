@@ -1,7 +1,7 @@
 # COMERCIAL LEAL
 
-Sistema para um comercio de pequeno porte
-Dsenvolvido com html, css e java scripy e o banco de dados firebase.
+Sistema para um comércio de pequeno porte
+Desenvolvido com html, css e java scripy e o banco de dados firebase.
 
 ## Objetivo
 Proporcionar uma melhor visualização do estabelecimento, automação e maior alcance.
