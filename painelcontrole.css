@@ -390,9 +390,99 @@ th:last-child {
 }
 
 .btn-excluir {
+    margin-top: 5px;
     background-color: #e03636; /* Vermelho */
 }
 
 .btn-excluir:hover {
     background-color: #b81414; /* Tom mais escuro de azul */
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    /* Ajuste da fonte e espaçamento geral */
+    html {
+        font-size: 50%;
+    }
+
+    /* Ajuste da seção para dispositivos menores */
+    section {
+        padding: 1rem 5%;
+    }
+
+    /* Título ajustado para mobile */
+    .heading {
+        font-size: 3rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Ajuste dos botões para dispositivos móveis */
+    .btn {
+        padding: 0.7rem 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* Header e Navbar responsivos */
+    .header {
+        padding: 1rem 5%;
+    }
+
+    .header .navbar a {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    /* Ajuste no formulário de cadastro */
+    #product-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #product-form h3 {
+        font-size: 2.2rem;
+    }
+
+    #product-form .inputBox input {
+        font-size: 1.4rem;
+        padding: 8px;
+    }
+
+    /* Ajuste nos botões de edição e exclusão */
+    .btn-editar, .btn-excluir {
+        font-size: 1.4rem;
+        padding: 6px 12px;
+    }
+
+    /* Tabelas responsivas com rolagem horizontal */
+    #product-table, #client-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #product-table th, #product-table td,
+    #client-table th, #client-table td {
+        font-size: 1.3rem;
+        padding: 5px;
+    }
+
+    /* Ajuste nas imagens da tabela */
+    #product-table img {
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    /* Footer responsivo */
+    .footer .credit {
+        font-size: 1.8rem;
+    }
+
+    .footer .links a {
+        font-size: 1.6rem;
+        padding: 0.5rem 1.5rem;
+    }
 }

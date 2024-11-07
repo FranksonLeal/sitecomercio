@@ -9,8 +9,10 @@
 
   <!-- Adicione os links para o CSS e o JavaScript -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
 </head>
 
@@ -29,15 +31,17 @@
 
 
     <div class="icons">
-      <div class="fas fa-shopping-cart" id="cart-btn" data-count="0"></div>
-      <div id="cart-notification">0</div>
-
+      <div class="fas fa-shopping-cart" id="cart-btn" data-count="0">
+          <div id="cart-notification">0</div>
+      </div>
+  
       <!-- Ícone circular para o usuário -->
       <div id="user-profile" class="user-initial" style="display: none;"></div>
-
+  
       <!-- Botão "Entrar" -->
       <button id="entrarbtn" class="entrarbtn">Entrar</button>
-    </div>
+  </div>
+  
 
 
     <div id="userModal" class="modal4">
@@ -185,9 +189,10 @@
           <span class="fas fa-map-marker-alt"></span>
           <input type="text" id="address" placeholder="Endereço" />
         </div>
-        <button type="button" id="send-message-btn" class="btn">
-          Enviar mensagem pelo whatsApp
-        </button>
+        <button type="button" id="send-message-btn" class="enviarmensagemwhat">
+          <i class="fab fa-whatsapp"></i> Enviar mensagem pelo WhatsApp
+      </button>
+      
       </form>
     </div>
   </section>
@@ -336,8 +341,8 @@
 
   <section class="footer" id="redesSociais">
     <div class="share">
-      <a href="https://www.facebook.com/sua_pagina" class="fab fa-facebook-f"></a>
-      <a href="https://www.instagram.com/sua_pagina" class="fab fa-instagram"></a>
+      <a href="https://www.facebook.com/profile.php?id=61568419526586" class="fab fa-facebook-f"></a>
+      <a href="https://www.instagram.com/comercial.leall/" class="fab fa-instagram"></a>
     </div>
     <div class="links">
       <a href="#home">Início</a>

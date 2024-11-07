@@ -11,6 +11,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginModal = document.getElementById("authModal");
   const finalizarCompraModal = document.getElementById("finalizarCompraModal");
@@ -63,54 +64,62 @@ document.addEventListener("DOMContentLoaded", function () {
     finalizarCompraModal.style.display = "none";
   });
 
-  // Fechar a janela modal quando clicar fora dela
-  window.addEventListener("click", function (event) {
-    if (event.target == finalizarCompraModal) {
-      finalizarCompraModal.style.display = "none";
-    }
-  });
+  // // Fechar a janela modal quando clicar fora dela
+  // window.addEventListener("click", function (event) {
+  //   if (event.target == finalizarCompraModal) {
+  //     finalizarCompraModal.style.display = "none";
+  //   }
+  // });
 
   // Variáveis para armazenar os dados do formulário
   let nomeEnviado = "";
   let enderecoEnviado = "";
   let tipoPagamentoEnviado = "";
 
-  // Event listener para enviar pedido
-  enviarPedidoBtn.addEventListener("click", function () {
-    // Obter os dados do formulário
-    const nome = nomeUsuarioInput.value;
-    const endereco = enderecoUsuarioInput.value;
-    const tipoPagamento = document.getElementById("tipo-pagamento").value;
+ // Event listener para enviar pedido
+enviarPedidoBtn.addEventListener("click", function () {
+  // Obter os dados do formulário
+  const nome = nomeUsuarioInput.value;
+  const endereco = enderecoUsuarioInput.value;
+  const tipoPagamento = document.getElementById("tipo-pagamento").value;
+  const troco = document.getElementById("valor-dinheiro").value; // Acessando o campo de valor diretamente
 
-    if (
-      nome.trim() === "" ||
-      endereco.trim() === "" ||
-      tipoPagamento.trim() === ""
-    ) {
-      alert("Por favor, preencha todos os campos obrigatórios.");
-      return;
-    }
+  // Converter o troco para float
+  const trocoFloat = parseFloat(troco);
 
-    let mensagem = `Olá, meu nome é ${nome} e gostaria de fazer um pedido com entrega em: ${endereco}.`;
+  // Verificar campos obrigatórios
+  if (
+    nome.trim() === "" ||
+    endereco.trim() === "" ||
+    tipoPagamento.trim() === "" ||
+    (tipoPagamento === "Dinheiro" && (isNaN(trocoFloat) || troco.trim() === ""))
+  ) {
+    alert("Por favor, preencha todos os campos obrigatórios.");
+    return;
+  }
 
-    const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-    cartItems.forEach((item, index) => {
-      mensagem += `\nProduto ${index + 1}: ${item.nome}, Preço: R$ ${item.preco
-        }, Quantidade: ${item.quantidade || 1}`;
-    });
+  let mensagem = `Olá, meu nome é ${nome} e gostaria de fazer um pedido com entrega em: ${endereco}.`;
 
-    // Adicionar o total da compra
-    const totalCompra = document.getElementById("total").textContent;
-    mensagem += `\nTotal da Compra: ${totalCompra}`;
-
-    mensagem += `\nTipo de Pagamento: ${tipoPagamento}`;
-
-    const urlWhatsApp = `https://api.whatsapp.com/send?phone=92991149103&text=${encodeURIComponent(
-      mensagem
-    )}`;
-
-    window.open(urlWhatsApp, "_blank");
+  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+  cartItems.forEach((item, index) => {
+    mensagem += `\nProduto ${index + 1}: ${item.nome}, Preço: R$ ${item.preco}, Quantidade: ${item.quantidade || 1}`;
   });
+
+  // Adicionar o total da compra
+  const totalCompra = document.getElementById("total").textContent;
+  mensagem += `\n\nTotal da Compra: ${totalCompra}`;
+  mensagem += `\nTipo de Pagamento: ${tipoPagamento}`;
+
+  // Adicionar informação de troco, caso seja dinheiro
+  if (tipoPagamento === "Dinheiro") {
+    mensagem += `\nTroco para: R$ ${trocoFloat.toFixed(2)}`;
+  }
+
+  const urlWhatsApp = `https://api.whatsapp.com/send?phone=92991149103&text=${encodeURIComponent(mensagem)}`;
+
+  window.open(urlWhatsApp, "_blank");
+});
+
 
   // Event listener para o botão "Finalizar"
   const irParaLoginBtnModalFinalizarCompra =
@@ -389,6 +398,7 @@ document.addEventListener("DOMContentLoaded", function () {
         quantityContainer.style.display = "flex";
         quantityContainer.style.flexDirection = "column";
         quantityContainer.style.alignItems = "center";
+        quantityContainer.style.textAlign = "center";
 
         quantityContainer.innerHTML = `
               <div class="qty" style="display: flex; align-items: center;">

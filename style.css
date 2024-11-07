@@ -79,7 +79,7 @@ section {
 
 .btnMissaoVisao {
   width: 200px;
-  margin-left: 25%;
+  margin-left: 35%;
   margin-bottom: 20px;
   border-radius: 15px;
   color: #fff;
@@ -90,6 +90,19 @@ section {
   align-self: center;
   margin-top: 1rem;
 }
+
+.enviarmensagemwhat {
+  width: 200px;
+  margin-bottom: 1rem;
+  text-transform: none;
+  border-radius: 20px;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #e77c1c;
+  cursor: pointer;
+}
+
 
 .btn:hover {
   letter-spacing: 0.1rem;
@@ -478,7 +491,7 @@ section {
   color: #bdc3c7;
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 30px;
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
@@ -631,6 +644,21 @@ Fim do modal de missao, visao e valores */
     padding: 0.6rem 1rem;
     font-size: 0.9rem; /* Reduz o tamanho do botão */
   }
+
+  .enviarmensagemwhat {
+    width: 200px;
+    margin-bottom: 1rem;
+    text-transform: none;
+    border-radius: 20px;
+    padding: 1rem 6rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #e77c1c;
+    cursor: pointer;
+  }
+
+  
+  
 }
 
 
@@ -974,7 +1002,7 @@ table tbody tr td:nth-child(6) {
 
   /* Cada linha de produto no carrinho será um bloco separado, ocupando toda a largura */
   table tbody tr {
-    width: 100%;
+    width: 80%;
     margin-bottom: 1rem;
     padding: 1rem;
     border: 1px solid #ccc;
@@ -987,7 +1015,7 @@ table tbody tr td:nth-child(6) {
 
   /* Estilização para as células do produto dentro do bloco */
   table tbody tr td {
-    width: 100%;
+    width: 800%;
     padding: 8px;
     text-align: center;
     display: flex;
@@ -1024,6 +1052,7 @@ table tbody tr td:nth-child(6) {
     width: 100%;
     max-width: 120px;
     padding: 0.5rem;
+    text-align: center;
     font-size: 0.9rem;
   }
 }
@@ -1111,6 +1140,7 @@ aside {
 }
 
 aside .box {
+  border-radius: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   background: #eee;
@@ -1148,6 +1178,7 @@ aside .box .info button {
   /* Impede a transformação do texto para maiúsculas */
   color: #28a745;
   background: transparent;
+  
   border: 0;
   display: flex;
   align-items: center;
@@ -1164,7 +1195,7 @@ aside .box footer {
 
 aside>button {
   margin-bottom: 100px;
-  border: 0;
+  border-radius: 8px;
   padding: 15px 0;
   color: white;
   background: #28a745;
@@ -1181,27 +1212,31 @@ aside>button:hover {
 
 
 
+/* No contêiner principal dos ícones */
+.icons {
+  position: relative; /* Garante que os elementos absolutos fiquem relativos a este contêiner */
+}
+
+/* Estilos do contador de notificações */
+/* No ícone de contagem */
+#cart-btn {
+  position: relative; /* Para que o #cart-notification seja posicionado em relação a ele */
+}
 
 #cart-notification {
-  position: relative;
-  /* Alterado para absolute */
-  top: 10%;
-  margin: 0%;
-  /* Centralizado verticalmente */
-  transform: translateY(-50%);
-  /* Centralizado verticalmente */
-  right: 15%;
-  /* Distância ajustável do ícone do carrinho */
+  position: absolute;
+  top: 0; /* Alinha o contador ao topo do ícone do carrinho */
+  right: 0; /* Alinha o contador à direita do ícone do carrinho */
+  transform: translate(125%, -60%); /* Ajusta o contador para dentro do ícone */
   background-color: red;
   color: white;
   font-size: 12px;
   font-weight: bold;
-  padding: 4px 8px;
+  padding: 2px 6px; /* Ajuste de tamanho */
   border-radius: 50%;
   min-width: 20px;
   text-align: center;
- 
-  /* Garante que a notificação esteja sempre acima dos outros elementos */
+  z-index: 10; /* Garante que o contador fique acima do carrinho */
 }
 
 
@@ -2066,12 +2101,22 @@ input[type="email"]:focus {
   section {
     padding: 2rem;
   }
+  
 }
 
 @media (max-width: 768px) {
   #menu-btn {
     display: inline-block;
   }
+  .close12 {
+    color: #666;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 
   .header .navbar {
     position: absolute;
@@ -2080,6 +2125,19 @@ input[type="email"]:focus {
     background: #fff;
     width: 30rem;
     height: calc(100vh - 9.5rem);
+  }
+  .btnMissaoVisao {
+    width: 200px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    color: #fff;
+    background: #e77c1c;
+    font-size: 1.7rem;
+    padding: 10px 50px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 1rem;
   }
 
   .header .navbar.active {
@@ -2112,6 +2170,49 @@ input[type="email"]:focus {
   .home .content p {
     font-size: 1.9rem;
   }
+  .btnMissaoVisao {
+    width: 200px;
+    margin-left: 25%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    color: #fff;
+    background: #e77c1c;
+    font-size: 1.7rem;
+    padding: 10px 50px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 1rem;
+  }
+
+  .buttons5 button {
+    font-size: 15px;
+    width: 50%;
+    margin-top: 50px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e77c1c;
+    color: #fff;
+    cursor: pointer;
+  }
+  .close3 {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    font-size: 28px;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.close12 {
+  color: #666;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
 }
 
 @media (max-width: 450px) {
@@ -2126,6 +2227,28 @@ input[type="email"]:focus {
   section {
     padding: 1rem;
   }
+  .btnMissaoVisao {
+    width: 200px;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    color: #fff;
+    background: #e77c1c;
+    font-size: 1.7rem;
+    padding: 10px 50px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 1rem;
+  }
+  .close12 {
+    color: #666;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
 }
 
 
@@ -2265,7 +2388,7 @@ input[type="email"]:focus {
 /* Células da tabela */
 #cart-items td, #cart-items th {
   padding: 8px; /* Espaçamento interno nas células */
-  text-align: left; /* Alinhamento à esquerda do texto */
+  text-align: center; /* Alinhamento à esquerda do texto */
   border-bottom: 1px solid #ddd; /* Borda inferior nas células */
   vertical-align: middle; /* Centraliza verticalmente o conteúdo das células */
   box-sizing: border-box; /* Garante que o padding e bordas não alterem a largura */
