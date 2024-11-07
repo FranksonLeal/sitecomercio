@@ -76,6 +76,7 @@ body {
     font-size: 14px;
     font-weight: 300;
     line-height: 30px;
+    text-align: center;
 }
 
 .description-primary {
@@ -200,7 +201,13 @@ input:-webkit-autofill {
     display: flex;
     align-items: center;
     margin: 8px;
+    border-radius: 20px; /* Define o arredondamento das bordas */
+    padding: 10px; /* Adiciona um pouco de preenchimento interno */
 }
+
+
+
+
 
 .icon-modify {
     color: #7f8c8d;
@@ -287,91 +294,6 @@ input:-webkit-autofill {
     animation: deslocamentoDir 1.3s; /* MODIFIQUEI DE 3s PARA 1.3s */
 }
 
-/* ANIMAÇÃO CSS PARA O CONTEÚDO */
-@keyframes deslocamentoEsq {
-    from {
-        left: 0;
-        opacity: 1;
-        z-index: 12;
-    }
-    25% {
-        left: -80px;
-        opacity: .5;
-    }
-    50% {
-        left: -100px;
-        opacity: .2;
-    }
-    to {
-        left: -110px;
-        opacity: 0;
-        z-index: -1;
-    }
-}
-
-@keyframes deslocamentoDir {
-    from {
-        left: 0;
-        z-index: 12;
-    }
-    25% {
-        left: 80px;
-    }
-    50% {
-        left: 100px;
-    }
-    to {
-        left: 110px;
-        z-index: -1;
-    }
-}
-
-/* ANIMAÇÃO CSS */
-@keyframes slidein {
-    from {
-        left: 0;
-        width: 40%;
-    }
-    25% {
-        left: 5%;
-        width: 50%;
-    }
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-    75% {
-        left: 45%;
-        width: 50%;
-    }
-    to {
-        left: 60%;
-        width: 40%;
-    }
-}
-
-@keyframes slideout {
-    from {
-        left: 60%;
-        width: 40%;
-    }
-    25% {
-        left: 45%;
-        width: 50%;
-    }
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-    75% {
-        left: 5%;
-        width: 50%;
-    }
-    to {
-        left: 0;
-        width: 40%;
-    }
-}
 
 #loading {
     position: fixed;
@@ -379,11 +301,10 @@ input:-webkit-autofill {
     left: 50%; /* Centraliza horizontalmente na metade da tela */
     transform: translate(-50%, -50%); /* Move o elemento para trás 50% da sua largura e altura */
     background-color: rgba(0, 0, 0, 0.863); /* Fundo mais escuro */
-    color: #0c0c0c; /* Cor do texto */
-    padding: 20px; /* Adiciona espaço interno */
-    border-radius: 15px; /* Borda arredondada */
-    font-size: 20px; /* Aumenta o tamanho da fonte */
-    z-index: 1000; /* Garante que a sobreposição fique acima dos outros elementos */
+    color: #fff; /* Cor do texto */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    z-index: 9999; /* Certifique-se de que o loading está acima de outros elementos */
 }
 
 
@@ -394,4 +315,144 @@ input:-webkit-autofill {
 /* Você pode adicionar um estilo adicional se quiser para diferenciar ainda mais */
 #auth-container.error-border {
     border: 2px solid red; /* Para a borda ao redor do container, se necessário */
+}
+
+
+/* Media query para telas menores que 600px
+@media (max-width: 600px) {
+    .container {
+        margin-top: 20px;
+        height: auto;
+    }
+
+    .content {
+        width: 100%; /* Ocupa toda a largura */
+        /* text-align: center;
+        justify-content: center;
+        height: 500px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+
+    /* Oculta a primeira coluna (lado esquerdo) */
+    /* .first-column {
+        display: none;
+    } */
+
+    /* Ajusta a segunda coluna para ocupar todo o espaço */
+    /* .second-column {
+        width: 100%;
+    } */
+
+    /* Remove o fundo laranja da primeira coluna */
+    /* .content::before {
+        display: none;
+    } */
+
+    /* Exibe o botão "Cadastrar" na segunda coluna, apenas em telas menores */
+    /* #register-button {
+        display: block;
+        margin-top: 20px;
+        background-color: #e77c1c;
+        border: 1px solid #e77c1c;
+        color: #ffffff;
+        padding: 10px 50px;
+        cursor: pointer;
+        font-size: 10px;
+        
+        border-radius: 15px;
+        transition: background-color .5s;
+    } */
+
+    /* Estilo de hover para o botão */
+    /* #register-button:hover {
+        background-color: #e77c1c;
+        color: #fff;
+    }
+} */
+
+
+
+
+
+/* 
+/* Media query para telas maiores que 600px */
+/* @media (min-width: 601px) {
+    #register-button {
+        display: none; /* Oculta o botão "Cadastrar" em telas maiores */
+    /* }
+    #btnRegister{
+        display: none;
+    } */
+/* }  */
+.esqueceuSenha {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #7f8c8d;
+}
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 50px;
+        height: auto;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 90%;
+        height: 530px;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    .content::before {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px 10px 0 0;
+        top: 0;
+        left: 0;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 8px 30px;
+        font-size: 12px;
+        width: auto;
+    }
+
+    .first-column, .second-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form input {
+        height: 40px;
+    }
+    #loading {
+        position: fixed;
+        top: 0; /* Alinha o loading no topo */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%); /* Move o elemento para o centro horizontal */
+        background-color: rgba(0, 0, 0, 0.863); /* Fundo mais escuro */
+        color: #fff; /* Cor do texto */
+        padding: 20px; /* Espaçamento interno */
+        border-radius: 0 0 8px 8px; /* Bordas arredondadas apenas na parte inferior */
+        z-index: 9999; /* Garante que o loading esteja acima de outros elementos */
+        width: auto; /* Ajusta largura automaticamente */
+        text-align: center; /* Centraliza o texto */
+    }
 }

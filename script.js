@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const productImage = document.createElement("img");
           productImage.src = product.imagem;
           productImage.alt = product.nome;
-          productImage.style.height = "12rem";
+          productImage.style.height = "10rem";
           productImageCell.appendChild(productImage);
         } else {
           productImageCell.textContent = "Imagem não disponível";
@@ -514,6 +514,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Índice inválido para remoção do carrinho:", index);
     }
   }
+
 
 
 

@@ -63,19 +63,19 @@ section {
   text-transform: uppercase;
 }
 
-.btn {
-  width: 200px;
+/* .btn {
+  width: 150px;
   margin-bottom: 20px;
   text-transform: none;
   border-radius: 20px;
   margin-top: 1rem;
   display: inline-block;
   padding: 1.9rem 3rem;
-  font-size: 1.7rem;
+  font-size: 1rem;
   color: #fff;
   background: #e77c1c;
   cursor: pointer;
-}
+} */
 
 .btnMissaoVisao {
   width: 200px;
@@ -92,7 +92,7 @@ section {
 }
 
 .btn:hover {
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
 }
 
 .header {
@@ -265,7 +265,7 @@ section {
 
 .home .content p {
   text-transform: none;
-  font-size: 3.2rem;
+  font-size: 2.2rem;
   font-weight: lighter;
   line-height: 1.8;
   padding: 1rem 0;
@@ -515,20 +515,17 @@ Fim do modal de missao, visao e valores */
 
 /* Inicio da Seção dos produtos */
 
-/* Estilização para os produtos na seção de menu */
-.box-container {
-  width: 245px;
-  /* largura do contêiner do produto */
-  margin: 10px;
-  /* margem entre os produtos */
-  gap: 1.5rem;
-  padding: 2rem;
-  border: 1px solid #ccc;
-  /* borda ao redor do contêiner do produto */
-  text-align: center;
-  /* centraliza o conteúdo dentro do contêiner */
-  display: inline-block;
-  /* alinha os produtos horizontalmente */
+/* Estilização do botão */
+.btn {
+  width: 150px;
+  margin-bottom: 1rem;
+  text-transform: none;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: #fff;
+  background: #e77c1c;
+  cursor: pointer;
 }
 
 /* Estilização para a imagem do produto */
@@ -539,52 +536,46 @@ Fim do modal de missao, visao e valores */
 
 
 .menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* Centraliza os produtos horizontalmente */
-  gap: 2rem; /* Espaçamento entre os produtos */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Exibe 2 produtos por linha */
+  gap: 1.5rem;
   padding: 2rem;
   margin: 0 auto;
-  /* Centraliza o contêiner no meio da tela */
 }
 
-/* Estilização para os produtos na seção de menu */
+/* Estilização para os produtos */
 .box-container {
-  width: 245px; /* largura do contêiner do produto */
-  padding: 2rem;
-  border: 1px solid #ccc; /* borda ao redor do contêiner do produto */
+  padding: 1.5rem;
+  border: 1px solid #ccc;
   border-radius: 20px;
   background-color: white;
-  text-align: center; /* centraliza o conteúdo dentro do contêiner */
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
 }
-
-/* Estilização para a imagem do produto */
+/* Estilização da imagem */
 .box-container img {
-  height: 20rem;
+  height: 15rem;
   object-fit: cover;
 }
 
-/* Estilização para o nome do produto */
+/* Estilização do nome do produto */
 .box-container h3 {
-  text-transform: none; /* Impede a transformação do texto para maiúsculas */
   color: #000000;
-  font-size: 2rem;
-  padding: 1rem 0;
-}
-
-/* Estilização para a descrição do produto */
-.box-container p {
-  color: #000000;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   padding: 0.5rem 0;
 }
 
-/* Centraliza o contêiner de produtos no layout */
+/* Estilização da descrição do produto */
+.box-container p {
+  color: #000000;
+  font-size: 1.2rem;
+  padding: 0.5rem 0;
+}
+
+
 .menu .box-container {
   background-color: white;
   border-radius: 20px;
@@ -594,29 +585,57 @@ Fim do modal de missao, visao e valores */
 }
 
 
-/* Estilização para o nome do produto */
-.box-container h3 {
-  text-transform: none;
-  /* Impede a transformação do texto para maiúsculas */
-  color: #000000;
-  font-size: 2rem;
-  padding: 1rem 0;
+/* Media query para telas maiores que tablet (computadores ou desktops) */
+@media (min-width: 992px) {
+  .menu {
+    grid-template-columns: repeat(5, 1fr); /* Exibe 5 produtos por linha */
+  }
 }
 
-.box-container p {
-  color: #000000;
-  font-size: 2.5rem;
-  padding: 0.5rem 0;
+/* Media queries para responsividade */
+@media (max-width: 991px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr); /* Exibe 3 produtos por linha em telas médias */
+  }
+
+  .box-container img {
+    height: 12rem; /* Reduz a altura das imagens para se ajustar melhor */
+  }
 }
 
-.menu .box-container {
-  align-items: center;
-  border-radius: 20px;
-  background: white;
-  padding: 2rem;
-  text-align: center;
-  border: var(--border);
+/* Telas abaixo de 560px: ajusta para exibir 2 produtos por linha e reduz o tamanho dos elementos */
+@media (max-width: 560px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr); /* Exibe 2 produtos por linha */
+    gap: 1rem;
+  }
+
+  .box-container {
+    padding: 1rem; /* Reduz o padding */
+  }
+
+  .box-container img {
+    max-height: 12rem; /* Reduz a altura da imagem */
+  }
+
+  .box-container h3 {
+    font-size: 1.2rem; /* Diminui o tamanho do texto */
+  }
+
+  .box-container p {
+    font-size: 1rem; /* Diminui o tamanho da descrição */
+  }
+
+  .btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem; /* Reduz o tamanho do botão */
+  }
 }
+
+
+
+
 
 /* Fim da Seção dos produtos */
 
@@ -913,7 +932,7 @@ table tbody tr td:nth-child(6) {
   background: #a7a7a7;
 }
 
-/* Adicionando responsividade */
+/* Estilização de carrinho responsivo */
 
 /* Para tablets */
 @media (max-width: 768px) {
@@ -942,8 +961,10 @@ table tbody tr td:nth-child(6) {
     font-size: 45%; /* Ajusta o tamanho da fonte geral */
   }
 
+  /* Define o estilo dos elementos da tabela para se adaptarem melhor em telas pequenas */
   table, thead, tbody, th, td, tr {
     display: block;
+    width: 100%; /* Cada linha ocupa a largura total da tela */
   }
 
   /* Esconde o cabeçalho da tabela */
@@ -951,24 +972,35 @@ table tbody tr td:nth-child(6) {
     display: none;
   }
 
-  /* Cada linha do tbody será um bloco separado */
+  /* Cada linha de produto no carrinho será um bloco separado, ocupando toda a largura */
   table tbody tr {
+    width: 100%;
     margin-bottom: 1rem;
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza os itens dentro do "quadrado" */
   }
 
+  /* Estilização para as células do produto dentro do bloco */
   table tbody tr td {
+    width: 100%;
     padding: 8px;
-    text-align: left;
+    text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-sizing: border-box;
   }
 
+  /* Ajusta a imagem para telas pequenas, ocupando um tamanho consistente */
   table tbody tr td img {
-    width: 80px;
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px; /* Espaço entre imagem e texto */
   }
 
   .qty {
@@ -986,7 +1018,16 @@ table tbody tr td:nth-child(6) {
     height: 25px;
     font-size: 16px;
   }
+
+  /* Adiciona estilo para garantir uniformidade nos botões e entradas */
+  .btn, input.quantity {
+    width: 100%;
+    max-width: 120px;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
 }
+
 
 /* Término da seção de carrinho de compra */
 
@@ -2069,7 +2110,7 @@ input[type="email"]:focus {
   }
 
   .home .content p {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -2087,43 +2128,6 @@ input[type="email"]:focus {
   }
 }
 
-/* Seção de produtos */
-.produtos-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Para telas grandes, 4 produtos por linha */
-  gap: 20px; /* Espaçamento entre os produtos */
-}
-
-@media (max-width: 991px) {
-  .produtos-container {
-    grid-template-columns: repeat(2, 1fr); /* Para telas médias, 2 produtos por linha */
-  }
-
-  section {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .produtos-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha para tablets */
-  }
-
-  section {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .produtos-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 produtos por linha para celulares */
-    gap: 15px; /* Ajuste o espaçamento para dispositivos móveis */
-  }
-
-  section {
-    padding: 1rem;
-  }
-}
 
 
 .user-initial {
@@ -2233,24 +2237,135 @@ input[type="email"]:focus {
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   #cart-items td, #cart-items th {
-      padding: 4px; /* Reduz ainda mais o padding nas células em dispositivos móveis */
-      font-size: 12px; /* Diminuir o tamanho da fonte */
+    padding: 4px; /* Reduz ainda mais o padding nas células em dispositivos móveis */
+    font-size: 12px; /* Diminuir o tamanho da fonte */
   }
 
   #cart-items img {
-      height: 8rem; /* Diminuir a altura das imagens */
+    height: 6rem; /* Diminuir a altura das imagens */
   }
 
   .quantity {
-      width: 40px; /* Largura menor para a entrada de quantidade */
-      font-size: 12px; /* Diminuir o tamanho da fonte na entrada de quantidade */
+    width: 40px; /* Largura menor para a entrada de quantidade */
+    font-size: 12px; /* Diminuir o tamanho da fonte na entrada de quantidade */
   }
 
   .increment, .decrement {
-      padding: 3px 6px; /* Reduz o padding dos botões */
-      font-size: 10px; /* Reduz o tamanho da fonte nos botões */
+    padding: 3px 6px; /* Reduz o padding dos botões */
+    font-size: 10px; /* Reduz o tamanho da fonte nos botões */
   }
 }
+
+/* Estilos gerais da tabela */
+#cart-items {
+  width: 100%; /* A tabela ocupa 100% da largura do contêiner */
+  border-collapse: collapse; /* Remove espaços entre as bordas das células */
+}
+
+/* Células da tabela */
+#cart-items td, #cart-items th {
+  padding: 8px; /* Espaçamento interno nas células */
+  text-align: left; /* Alinhamento à esquerda do texto */
+  border-bottom: 1px solid #ddd; /* Borda inferior nas células */
+  vertical-align: middle; /* Centraliza verticalmente o conteúdo das células */
+  box-sizing: border-box; /* Garante que o padding e bordas não alterem a largura */
+}
+
+/* Estilos para a mensagem quando não há produtos */
+#cart-items td[colspan="5"] {
+  text-align: center; /* Centraliza o texto da mensagem */
+  padding: 15px; /* Espaçamento interno para destaque */
+}
+
+/* Imagens dos produtos */
+#cart-items img {
+  height: 12rem; /* Altura padrão das imagens */
+  width: auto; /* Mantém a proporção */
+  max-width: 100%; /* Limita a largura máxima da imagem */
+}
+
+/* Estilos de entrada de quantidade e botões */
+.qty {
+  display: flex; /* Alinha os itens em linha */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.increment, .decrement {
+  background-color: #f0f0f0; /* Cor de fundo dos botões */
+  border: 1px solid #ccc; /* Borda dos botões */
+  padding: 4px 8px; /* Espaçamento interno dos botões */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+}
+
+.quantity {
+  border: 1px solid #ccc; /* Borda da entrada */
+  padding: 4px; /* Espaçamento interno */
+  text-align: center; /* Centraliza o texto */
+  width: 60px; /* Largura da entrada de quantidade */
+}
+
+/* Botão de remover */
+.remove {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remove a borda */
+  cursor: pointer; /* Muda o cursor ao passar por cima */
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  #cart-items td, #cart-items th {
+    padding: 4px; /* Reduz o padding nas células em dispositivos móveis */
+    font-size: 12px; /* Diminuir o tamanho da fonte */
+  }
+
+  #cart-items img {
+    height: 6rem; /* Diminuir a altura das imagens */
+  }
+
+  .quantity {
+    width: 40px; /* Largura menor para a entrada de quantidade */
+    font-size: 12px; /* Diminuir o tamanho da fonte na entrada de quantidade */
+  }
+
+  .increment, .decrement {
+    padding: 3px 6px; /* Reduz o padding dos botões */
+    font-size: 10px; /* Reduz o tamanho da fonte nos botões */
+  }
+}
+
+/* Responsividade para telas menores que 460px */
+@media (max-width: 460px) {
+  #cart-items {
+    display: flex;
+    flex-direction: column; /* Alinha os itens do carrinho em coluna */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+  }
+
+  #cart-items td, #cart-items th {
+    text-align: center; /* Centraliza o texto nas células */
+    display: block; /* Exibe as células em bloco para centralização */
+    width: 100%; /* Define largura total para cada célula, evitando sobreposição */
+  }
+
+  .qty, .remove, .quantity, .increment, .decrement {
+    justify-content: center; /* Centraliza os botões e campos */
+    text-align: center;
+  }
+
+  .remove {
+    display: flex; /* Garante que o ícone possa ser centralizado */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Ocupa toda a largura disponível da célula */
+  }
+
+  .increment, .decrement {
+    display: inline-block; /* Ajusta a exibição dos botões */
+    margin: 0 2px; /* Margem lateral para espaçamento */
+  }
+}
+
+
 
 
 

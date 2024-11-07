@@ -39,7 +39,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     width: 960px;
-    height: 90%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -203,8 +203,13 @@ input:-webkit-autofill {
     background-color: #ecf0f1;
     display: flex;
     align-items: center;
-    margin: 8px;
+    margin: 4px;
+    border-radius: 20px; /* Define o arredondamento das bordas */
+    padding: 2px; /* Adiciona um pouco de preenchimento interno */
 }
+
+
+
 
 .icon-modify {
     color: #7f8c8d;
@@ -292,90 +297,7 @@ input:-webkit-autofill {
     animation: deslocamentoDir 1.3s;
 }
 
-/* Animações CSS */
-@keyframes deslocamentoEsq {
-    from {
-        left: 0;
-        opacity: 1;
-        z-index: 12;
-    }
-    25% {
-        left: -80px;
-        opacity: .5;
-    }
-    50% {
-        left: -100px;
-        opacity: .2;
-    }
-    to {
-        left: -110px;
-        opacity: 0;
-        z-index: -1;
-    }
-}
 
-@keyframes deslocamentoDir {
-    from {
-        left: 0;
-        z-index: 12;
-    }
-    25% {
-        left: 80px;
-    }
-    50% {
-        left: 100px;
-    }
-    to {
-        left: 110px;
-        z-index: -1;
-    }
-}
-
-@keyframes slidein {
-    from {
-        left: 0;
-        width: 40%;
-    }
-    25% {
-        left: 5%;
-        width: 50%;
-    }
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-    75% {
-        left: 45%;
-        width: 50%;
-    }
-    to {
-        left: 60%;
-        width: 40%;
-    }
-}
-
-@keyframes slideout {
-    from {
-        left: 60%;
-        width: 40%;
-    }
-    25% {
-        left: 45%;
-        width: 50%;
-    }
-    50% {
-        left: 25%;
-        width: 60%;
-    }
-    75% {
-        left: 5%;
-        width: 50%;
-    }
-    to {
-        left: 0;
-        width: 40%;
-    }
-}
 
 #loading {
     position: fixed;
@@ -387,4 +309,53 @@ input:-webkit-autofill {
     padding: 20px; /* Espaçamento interno */
     border-radius: 8px; /* Bordas arredondadas */
     z-index: 9999; /* Certifique-se de que o loading está acima de outros elementos */
+}
+
+
+
+/* Estilos para telas menores que 600px */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 50px;
+        height: auto;
+    }
+
+    .content {
+        flex-direction: column;
+        width: 90%;
+        height: 630px;
+        box-shadow: none;
+        border-radius: 10px;
+    }
+
+    .content::before {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px 10px 0 0;
+        top: 0;
+        left: 0;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 8px 30px;
+        font-size: 12px;
+        width: auto;
+    }
+
+    .first-column, .second-column {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form {
+        width: 90%;
+    }
+
+    .form input {
+        height: 40px;
+    }
 }
