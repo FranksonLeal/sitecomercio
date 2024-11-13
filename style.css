@@ -247,27 +247,45 @@ section {
   text-align: center;
 }
 
+/* Seção Home */
 .home {
   border-radius: 20px;
   min-height: 100vh;
   margin-top: 80px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centraliza verticalmente */
-  text-align: center; /* Centraliza o texto horizontalmente */
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
   background: rgba(3, 0, 12, 0.9) url(../img/comercio.jpg) no-repeat;
   background-blend-mode: darken;
   background-size: cover;
   background-position: center;
-  padding: 20px; /* Adiciona um pouco de espaçamento */
+  padding: 20px;
 }
 
+
+/* Conteúdo do carrossel */
+.content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
 .home .content {
+  position: relative;
   max-width: 100rem;
-  
-  border-radius: 15px; /* Arredonda os cantos */
-  padding: 20px; /* Espaçamento interno */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para um efeito de profundidade */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 1; /* Coloca o conteúdo acima do carrossel */
 }
 
 .home .content h3 {
@@ -363,9 +381,9 @@ section {
   /* Sombra suave */
 }
 
-/* section.about {
-  
-} */
+.about .heading span {
+  color: #e77c1c; /* Cor de destaque */
+}
 
 .about .row .image {
   flex: 1 1 45rem;
@@ -592,7 +610,7 @@ Fim do modal de missao, visao e valores */
 .menu .box-container {
   background-color: white;
   border-radius: 20px;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
   border: var(--border);
 }
@@ -672,61 +690,88 @@ Fim do modal de missao, visao e valores */
 
 
 
-/*Inicio da Seção dos contatos*/
+
+.contact {
+  padding: 20px;
+}
+
+.contact .heading {
+  font-size: 4rem;
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.contact .heading span {
+  color: #e77c1c;
+}
+
 .contact .row {
-  border-radius: 20px;
   display: flex;
-  background: white;
+  background: var(--white);
   flex-wrap: wrap;
   gap: 1rem;
+  padding: 2rem;
 }
 
 .contact .row .map {
-  border-radius: 20px;
   flex: 1 1 45rem;
-  width: 100%;
-  object-fit: cover;
+  height: 400px;
+  background-color: #000; /* Cor de fundo alternativa */
 }
 
 .contact .row form {
-  border-radius: 20px;
+  background: white;
   flex: 1 1 45rem;
   padding: 5rem 2rem;
   text-align: center;
 }
 
 .contact .row form h3 {
-  border-radius: 20px;
   text-transform: uppercase;
   font-size: 3.5rem;
-  color: #000000;
+  color: #000;
+  margin-bottom: 1rem;
 }
 
 .contact .row form .inputBox {
   border-radius: 20px;
   display: flex;
   align-items: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background: #fff;
+  margin: 2rem 0;
+  background: var(--white);
   border: var(--border);
 }
 
 .contact .row form .inputBox span {
-  color: #000000;
+  color: #000;
   font-size: 2rem;
   padding-left: 2rem;
 }
 
 .contact .row form .inputBox input {
-  border-radius: 20px;
-  border: none;
   width: 100%;
   padding: 2rem;
   font-size: 1.7rem;
-  color: rgb(34, 34, 34);
-  text-transform: none;
+  color: #fff;
   background: none;
+  border: none;
+  outline: none;
+}
+
+.send-message-btn {
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.send-message-btn i {
+  margin-right: 8px;
 }
 
 /*Seção do menu inferior - REDES SOCIAIS*/
@@ -2434,6 +2479,10 @@ input[type="email"]:focus {
   cursor: pointer; /* Muda o cursor ao passar por cima */
 }
 
+
+
+
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
   #cart-items td, #cart-items th {
@@ -2493,3 +2542,99 @@ input[type="email"]:focus {
 
 
 
+
+
+
+/* Estilo do fundo do carregamento */
+/* Estilo do fundo do carregamento */
+#carregamento {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  display: flex;
+  flex-direction: column; /* Alinha os itens na coluna */
+  align-items: center;     /* Centraliza os itens horizontalmente */
+  justify-content: center; /* Centraliza os itens verticalmente */
+  color: #ffffff;
+  font-size: 1.2em;
+  z-index: 1000;
+}
+
+/* Estilo do texto de carregamento */
+#carregamento p {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center; /* Centraliza o texto */
+  margin-bottom: 0;   /* Remove qualquer margem extra abaixo do texto */
+}
+
+
+
+
+/* Seção de Proprietários */
+.proprietarios {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  
+}
+
+.proprietarios .heading {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.proprietarios .heading span {
+  color: #e77c1c; /* Cor de destaque */
+}
+
+.proprietarios .row {
+  display: flex;
+  justify-content: center;
+  gap: 40px; /* Espaçamento entre os quadrados */
+}
+
+.proprietarios .proprietario {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.proprietarios .proprietario .descricao .stars i{
+  font-size: 1.5rem;
+  color: #f9a825;
+}
+
+.proprietarios .proprietario:hover {
+  transform: translateY(-10px);
+}
+
+.proprietarios .proprietario img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.proprietarios .descricao h3 {
+  font-size: 22px;
+  text-transform: none;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.proprietarios .descricao p {
+  font-size: 16px;
+  color: #666;
+  text-transform: none;
+  line-height: 1.5;
+}

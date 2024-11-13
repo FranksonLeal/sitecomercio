@@ -57,6 +57,12 @@
       </div>
     </div>
 
+    <div id="carregamento" style="display: none;">
+      <div class="loader"></div>
+      <p>Removendo item...</p>
+    </div>
+    
+
     <div id="historicModal" class="modal12">
       <div class="modal-content12">
         <span class="close12">&times;</span>
@@ -69,6 +75,10 @@
   </header>
 
   <section class="home" id="home">
+      
+      
+  </div>
+
     <div class="content">
         <h3>Comercial Leal</h3>
         <p>
@@ -95,6 +105,10 @@
         </div>
     </div>
 </section>
+
+
+
+
 
 
 
@@ -158,44 +172,84 @@
     <div class="box-container" id="iogurtes-container"></div>
   </section>
 
-  <section class="contact" id="localizacao">
-    <h1 class="heading"><span>Nosso</span> Endereço</h1>
-    <div class="row">
-      <iframe class="map"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8441418814623!2d-58.44470872633795!3d-3.135843440442185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926f557d9f5be451%3A0xcf62de97cafe292e!2sComercial%20Leal!5e0!3m2!1spt-BR!2sbr!4v1706621333191!5m2!1spt-BR!2sbr"
-        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </section>
-
   <section class="contact" id="contato">
-    <h1 class="heading"><span>Entrar em</span> contato</h1>
+    <h1 class="heading"><span>Nosso</span> Endereço e <span>Contato</span></h1>
     <div class="row">
-
-      <form id="contact-form">
+      <!-- Mapa do Google -->
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8441418814623!2d-58.44470872633795!3d-3.135843440442185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926f557d9f5be451%3A0xcf62de97cafe292e!2sComercial%20Leal!5e0!3m2!1spt-BR!2sbr!4v1706621333191!5m2!1spt-BR!2sbr"
+          width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+  
+      <!-- Formulário de Contato -->
+      <form>
+        <h3>Entrar em Contato</h3>
         <div class="inputBox">
           <span class="fas fa-user"></span>
-          <input type="text" id="name" placeholder="Nome" />
+          <input type="text" placeholder="Nome" />
         </div>
         <div class="inputBox">
           <span class="fas fa-envelope"></span>
-          <input type="email" id="email" placeholder="Email" />
+          <input type="email" placeholder="Email" />
         </div>
         <div class="inputBox">
           <span class="fas fa-phone"></span>
-          <input type="tel" id="phone" placeholder="Telefone" />
+          <input type="tel" placeholder="Telefone" />
         </div>
         <div class="inputBox">
           <span class="fas fa-map-marker-alt"></span>
-          <input type="text" id="address" placeholder="Endereço" />
+          <input type="text" placeholder="Endereço" />
         </div>
-        <button type="button" id="send-message-btn" class="enviarmensagemwhat">
+        <button type="button" class="send-message-btn">
           <i class="fab fa-whatsapp"></i> Enviar mensagem pelo WhatsApp
-      </button>
-      
+        </button>
       </form>
     </div>
   </section>
+  
+
+
+
+  <section class="proprietarios" id="proprietarios">
+    <h1 class="heading"><span>Conheça nossos</span> Proprietários</h1>
+    <div class="row">
+        <!-- Proprietário 1 -->
+        <div class="proprietario">
+            <img src="img/frank.jpg" alt="Proprietário 1">
+            <div class="descricao">
+                <h3>Frank Ney</h3>
+                <p>Atua a mais de 20 anos no ramo de vendas de produtos alimentícios e atualmente é o presidente geral da empresa.</p>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+        </div>
+
+        <!-- Proprietário 2 --> 
+        <div class="proprietario">
+            <img src="img/rosi.jpg" alt="Proprietário 2">
+            <div class="descricao">
+                <h3>Rosivane Leal</h3>
+                <p>Administradora e gerente da empresa, com experiências no mercado do ramo de alimentos e estivas.</p>
+                <div class="stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
   <section class="carrinho" id="carrinho">
     <h1 class="heading"><span>Seu</span> carrinho</h1>
@@ -299,7 +353,12 @@
         </form>
       </div>
     </div>
+    
+    
   </div>
+
+  
+  
 
   <!-- Modal de autenticação -->
   <div id="authModal" class="modal2">
@@ -308,6 +367,11 @@
         Você precisa fazer login para prosseguir ao seu carrinho de compras.
       </p>
       <button id="loginModalBtn">Fazer Login</button>
+
+      <p>
+        Não possui cadastro?
+      </p>
+      <button id="cadastroModalBtn">Cadastrar</button>
       <button id="closeModalBtn">Fechar</button>
     </div>
   </div>
@@ -335,6 +399,8 @@
       </form>
     </div>
   </div>
+
+ 
 
 
 
