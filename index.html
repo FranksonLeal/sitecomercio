@@ -26,6 +26,7 @@
       <a href="#sobre" class="scroll-link">Sobre</a>
       <a href="#produtos" class="scroll-link">Produtos</a>
       <a href="#contato" class="scroll-link"> Contatos</a>
+      <a href="#proprietarios" class="scroll-link"> Proprietários</a>
       <a href="#redesSociais" class="scroll-link">Redes sociais</a>
     </nav>
 
@@ -142,7 +143,7 @@
       </div>
     </div>
 
-    <h1 class="heading">Nossos <span>Produtos</span></h1>
+    
   </section>
 
   <div id="missionVisionValuesModal" class="modal8">
@@ -166,11 +167,16 @@
     </div>
   </div>
 
+  <h1 class="heading2"><span>Nossos</span> Iogurtes e <span>Sucos</span></h1>
+<section class="menu" id="produtos">
+  <!-- Produtos serão injetados aqui -->
+</section>
 
+<h1 class="heading2"><span>Nossa</span> Bomboniere</h1>
+<section class="menu" id="produtos2">
+  <!-- Produtos serão injetados aqui -->
+</section>
 
-  <section class="menu" id="produtos">
-    <div class="box-container" id="iogurtes-container"></div>
-  </section>
 
   <section class="contact" id="contato">
     <h1 class="heading"><span>Nosso</span> Endereço e <span>Contato</span></h1>
@@ -185,28 +191,29 @@
       </div>
   
       <!-- Formulário de Contato -->
-      <form>
-        <h3>Entrar em Contato</h3>
-        <div class="inputBox">
-          <span class="fas fa-user"></span>
-          <input type="text" placeholder="Nome" />
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-envelope"></span>
-          <input type="email" placeholder="Email" />
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-phone"></span>
-          <input type="tel" placeholder="Telefone" />
-        </div>
-        <div class="inputBox">
-          <span class="fas fa-map-marker-alt"></span>
-          <input type="text" placeholder="Endereço" />
-        </div>
-        <button type="button" class="send-message-btn">
-          <i class="fab fa-whatsapp"></i> Enviar mensagem pelo WhatsApp
-        </button>
-      </form>
+<form>
+  <h3>Entrar em Contato</h3>
+  <div class="inputBox">
+    <span class="fas fa-user"></span>
+    <input type="text" id="name" placeholder="Nome" />
+  </div>
+  <div class="inputBox">
+    <span class="fas fa-envelope"></span>
+    <input type="email" id="email" placeholder="Email" />
+  </div>
+  <div class="inputBox">
+    <span class="fas fa-phone"></span>
+    <input type="tel" id="phone" placeholder="Telefone" />
+  </div>
+  <div class="inputBox">
+    <span class="fas fa-map-marker-alt"></span>
+    <input type="text" id="address" placeholder="Endereço" />
+  </div>
+  <button id="send-message-btn" type="button" class="send-message-btn">
+    <i class="fab fa-whatsapp"></i> Enviar mensagem pelo WhatsApp
+  </button>
+</form>
+
     </div>
   </section>
   
@@ -259,7 +266,7 @@
           <tr>
             <th>Imagem</th>
             <th>Produto</th>
-            <th>Preço</th>
+            <th>Preço Unit.</th>
             <th>Quantidade</th>
 
             <th>Total</th>
@@ -432,33 +439,31 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // Adiciona um evento de clique ao botão de envio de mensagem
-      const sendMessageBtn = document.getElementById("send-message-btn");
-      if (sendMessageBtn) {
-        sendMessageBtn.addEventListener("click", function () {
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const phone = document.getElementById("phone").value;
-          const address = document.getElementById("address").value;
+  // Adiciona um evento de clique ao botão de envio de mensagem
+  const sendMessageBtn = document.getElementById("send-message-btn");
+  if (sendMessageBtn) {
+    sendMessageBtn.addEventListener("click", function () {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const address = document.getElementById("address").value;
 
-          // Verifica se todos os campos estão preenchidos
-          if (!name || !email || !phone || !address) {
-            alert("Por favor, preencha todos os campos.");
-            return;
-          }
-
-          const message = `Nome: ${name}\nEmail: ${email}\nTelefone: ${phone}\nEndereço: ${address}`;
-
-          const phoneNumber = "5592991149103";
-          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-            message
-          )}`;
-
-          // Abre o link do WhatsApp para enviar a mensagem
-          window.open(whatsappUrl, "_blank");
-        });
+      // Verifica se todos os campos estão preenchidos
+      if (!name || !email || !phone || !address) {
+        alert("Por favor, preencha todos os campos.");
+        return;
       }
+
+      const message = `Nome: ${encodeURIComponent(name)}\nEmail: ${encodeURIComponent(email)}\nTelefone: ${encodeURIComponent(phone)}\nEndereço: ${encodeURIComponent(address)}`;
+
+      const phoneNumber = "5592991149103";
+      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+      // Abre o link do WhatsApp para enviar a mensagem
+      window.open(whatsappUrl, "_blank");
     });
+  }
+});
 
   </script>
 

@@ -1,28 +1,39 @@
 // Função para cadastrar um produto no Firestore
+// Função para cadastrar um produto no Firestore
 function cadastrarNovoProduto(imageFile, nome, preco) {
-    const storageRef = firebase.storage().ref();
-    const imageRef = storageRef.child(imageFile.name);
-    imageRef.put(imageFile).then(() => {
-      imageRef.getDownloadURL().then((imageUrl) => {
-        db.collection("produtos")
-          .add({
-            imagem: imageUrl,
-            nome: nome,
-            preco: parseFloat(preco),
-          })
-          .then((docRef) => {
-            alert("Produto cadastrado com sucesso. ");
-  
-            productForm.reset();
-  
-            atualizarTabelaProdutos();
-          })
-          .catch((error) => {
-            console.error("Erro ao cadastrar produto: ", error);
-          });
-      });
-    });
+  const categoria = document.getElementById("product-category").value;
+
+  if (!categoria) {
+    alert("Por favor, selecione uma categoria.");
+    return;
   }
+
+  const storageRef = firebase.storage().ref();
+  const imageRef = storageRef.child(imageFile.name);
+
+  imageRef.put(imageFile).then(() => {
+    imageRef.getDownloadURL().then((imageUrl) => {
+      // Salvar o produto com a categoria no Firestore
+      db.collection("produtos")
+        .add({
+          imagem: imageUrl,
+          nome: nome,
+          preco: parseFloat(preco),
+          categoria: categoria, // Adiciona a categoria ao Firestore
+        })
+        .then(() => {
+          alert("Produto cadastrado com sucesso.");
+          document.getElementById("product-form").reset();
+          atualizarTabelaProdutos();
+        })
+        .catch((error) => {
+          console.error("Erro ao cadastrar produto: ", error);
+        });
+    });
+  });
+}
+
+
   
   function preencherFormulario(id, nome, preco, imagemUrl) {
     document.getElementById("product-form").dataset.productId = id;
@@ -191,32 +202,44 @@ function cadastrarNovoProduto(imageFile, nome, preco) {
     }
   }
   
-  // Função para exibir os produtos na tabela
-  function atualizarTabelaProdutos() {
-    const productTableBody = document.querySelector("#product-table tbody");
-    productTableBody.innerHTML = "";
-  
-    // Consultar os produtos no Firestore e adicionar na tabela
-    db.collection("produtos")
-      .get()
-      .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const produto = doc.data();
-          const newRow = `
-                  <tr>
-                      <td><img src="${produto.imagem}" alt="Imagem do Produto"></td>
-                      <td>${produto.nome}</td>
-                      <td>${produto.preco}</td>
-                      <td>
-                          <button class="btn-editar" onclick="editarProduto('${doc.id}', '${produto.nome}', '${produto.preco}', '${produto.imagem}')">Editar</button>
-                          <button class="btn-excluir" onclick="excluirProduto('${doc.id}')">Excluir</button>
-                      </td>
-                  </tr>
-              `;
-          productTableBody.insertAdjacentHTML("beforeend", newRow);
-        });
+  // Função para exibir os produtos separados por categoria
+function atualizarTabelaProdutos() {
+  // Limpar as tabelas
+  document.querySelector("#table-iogurtes tbody").innerHTML = "";
+  document.querySelector("#table-bonboniere tbody").innerHTML = "";
+
+  // Consultar os produtos no Firestore
+  db.collection("produtos")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const produto = doc.data();
+        const newRow = `
+          <tr>
+              <td><img src="${produto.imagem}" alt="Imagem do Produto"></td>
+              <td>${produto.nome}</td>
+              <td>${produto.preco}</td>
+              <td>
+                  <button class="btn-editar" onclick="editarProduto('${doc.id}', '${produto.nome}', '${produto.preco}', '${produto.imagem}')">Editar</button>
+                  <button class="btn-excluir" onclick="excluirProduto('${doc.id}')">Excluir</button>
+              </td>
+          </tr>
+        `;
+
+        // Verificar a categoria do produto e adicionar na tabela correspondente
+        if (produto.categoria === "iogurtes") {
+          document.querySelector("#table-iogurtes tbody").insertAdjacentHTML("beforeend", newRow);
+        } else if (produto.categoria === "bonboniere") {
+          document.querySelector("#table-bonboniere tbody").insertAdjacentHTML("beforeend", newRow);
+        }
       });
-  }
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar produtos: ", error);
+    });
+}
+
+  
   
   // Função para editar um cliente
   function editarCliente(id, nome, email, telefone, endereco) {

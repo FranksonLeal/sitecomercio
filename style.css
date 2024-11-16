@@ -63,6 +63,22 @@ section {
   text-transform: uppercase;
 }
 
+
+
+.heading2 {
+  margin-top: 90px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  padding-bottom: 3.5rem;
+  font-size: 4rem;
+}
+
+.heading2 span {
+  color: #e77c1c;
+  text-transform: uppercase;
+}
+
 /* .btn {
   width: 150px;
   margin-bottom: 20px;
@@ -544,8 +560,6 @@ Fim do modal de missao, visao e valores */
 
 
 
-/* Inicio da Seção dos produtos */
-
 /* Estilização do botão */
 .btn {
   width: 150px;
@@ -553,6 +567,7 @@ Fim do modal de missao, visao e valores */
   text-transform: none;
   border-radius: 20px;
   padding: 1rem 2rem;
+  margin-top: 10px;
   font-size: 1rem;
   color: #fff;
   background: #e77c1c;
@@ -560,24 +575,33 @@ Fim do modal de missao, visao e valores */
 }
 
 /* Estilização para a imagem do produto */
-.box-container img {
-  height: 20rem;
-}
-
-
-
-.menu {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Exibe 2 produtos por linha */
-  gap: 1.5rem;
-  padding: 2rem;
-  margin: 0 auto;
+.menu img {
+  height: 15rem;
+  object-fit: cover;
+   /* Faz a imagem ocupar toda a largura disponível */
 }
 
 /* Estilização para os produtos */
-.box-container {
+.menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Exibe 5 produtos por linha em telas grandes */
+  gap: 1.5rem;
   padding: 1.5rem;
-  border: 1px solid #ccc;
+  margin: 0 auto;
+}
+
+/* Cores para as palavras */
+.word1 {
+  color: black; /* Cor preta para 'Sucos' */
+}
+
+.word2 {
+  color: #e77c1c; /* Cor laranja para 'Iogurtes' */
+}
+
+.menu .produto {
+  padding: 1.5rem;
+  border: 1px solid #e77c1c;
   border-radius: 20px;
   background-color: white;
   text-align: center;
@@ -585,108 +609,64 @@ Fim do modal de missao, visao e valores */
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-/* Estilização da imagem */
-.box-container img {
-  height: 15rem;
-  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* Estilização do nome do produto */
-.box-container h3 {
-  color: #000000;
+.menu h3{
+  margin-top: 10px;
+  text-transform: none;
   font-size: 1.5rem;
-  padding: 0.5rem 0;
 }
 
-/* Estilização da descrição do produto */
-.box-container p {
-  color: #000000;
-  font-size: 1.2rem;
-  padding: 0.5rem 0;
+.menu p{
+  margin-top: 10px;
+  font-size: 1.5rem;
+  text-transform: none;
 }
 
-
-.menu .box-container {
-  background-color: white;
-  border-radius: 20px;
-  padding: 1.5rem;
-  text-align: center;
-  border: var(--border);
+.menu .produto:hover {
+  transform: scale(1.05); /* Efeito de destaque no hover */
 }
 
-
-/* Media query para telas maiores que tablet (computadores ou desktops) */
-@media (min-width: 992px) {
+/* Responsividade */
+@media (min-width: 1200px) {
   .menu {
-    grid-template-columns: repeat(5, 1fr); /* Exibe 5 produtos por linha */
+    grid-template-columns: repeat(5, 1fr); /* Exibe 5 produtos por linha em telas grandes */
   }
 }
 
-/* Media queries para responsividade */
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .menu {
-    grid-template-columns: repeat(3, 1fr); /* Exibe 3 produtos por linha em telas médias */
-  }
-
-  .box-container img {
-    height: 12rem; /* Reduz a altura das imagens para se ajustar melhor */
+    grid-template-columns: repeat(4, 1fr); /* Exibe 4 produtos por linha em telas médias */
   }
 }
 
-/* Telas abaixo de 560px: ajusta para exibir 2 produtos por linha e reduz o tamanho dos elementos */
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr); /* Exibe 2 produtos por linha em telas médias */
+  }
+}
 @media (max-width: 560px) {
   .menu {
-    grid-template-columns: repeat(2, 1fr); /* Exibe 2 produtos por linha */
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    
   }
-
-  .box-container {
-    padding: 1rem; /* Reduz o padding */
-  }
-
-  .box-container img {
-    max-height: 12rem; /* Reduz a altura da imagem */
-  }
-
-  .box-container h3 {
-    font-size: 1.2rem; /* Diminui o tamanho do texto */
-  }
-
-  .box-container p {
-    font-size: 1rem; /* Diminui o tamanho da descrição */
-  }
-
-  .btn {
-    width: 100%;
-    padding: 0.6rem 1rem;
-    font-size: 0.9rem; /* Reduz o tamanho do botão */
-  }
-
-  .enviarmensagemwhat {
-    width: 200px;
-    margin-bottom: 1rem;
-    text-transform: none;
-    border-radius: 20px;
-    padding: 1rem 6rem;
-    font-size: 1.2rem;
-    color: #fff;
-    background: #e77c1c;
-    cursor: pointer;
-  }
-
-  
-  
 }
 
 
+@media (max-width: 480px) {
+  .menu {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+}
 
-
-
-/* Fim da Seção dos produtos */
-
-
-/* ----------------------------------------------------------------------------------- */
+@media (max-width: 300px) {
+  .menu {
+    
+    grid-template-columns: 1fr; /* Exibe 1 produto por linha em telas pequenas */
+  }
+}
 
 
 
@@ -746,6 +726,7 @@ Fim do modal de missao, visao e valores */
 .contact .row form .inputBox span {
   color: #000;
   font-size: 2rem;
+  
   padding-left: 2rem;
 }
 
@@ -760,13 +741,23 @@ Fim do modal de missao, visao e valores */
 }
 
 .send-message-btn {
+  width: 200px;
+    text-transform: var(--border);
+    font-size: 1.2rem;
+    text-transform: none;
+    
+    border-radius: 15px;
+
+
+
   background-color: #25d366;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 5px;
+  
+
   cursor: pointer;
-  font-size: 1rem;
+  
   margin-top: 1rem;
 }
 

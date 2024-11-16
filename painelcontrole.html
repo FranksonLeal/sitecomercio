@@ -39,6 +39,14 @@
             placeholder="Preço do Produto"
           />
         </div>
+        <div class="inputBox">
+          <select id="product-category">
+            <option value="" disabled selected>Selecione uma Categoria</option>
+            <option value="iogurtes">Iogurtes</option>
+            <option value="bonboniere">Bonboniere</option>
+          </select>
+        </div>
+        
         <button
           type="button"
           class="btn"
@@ -49,20 +57,41 @@
         </button>
       </form>
 
-      <!-- Tabela para exibir produtos cadastrados -->
-      <table id="product-table">
-        <thead>
-          <tr>
-            <th>Imagem</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Ações</th>
-            <!-- Coluna para os botões -->
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      
     </section>
+
+    <!-- Seção de Iogurtes -->
+<section class="clientes" id="section-iogurtes">
+  <h2>Iogurtes e Sucos</h2>
+  <table id="table-iogurtes">
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<!-- Seção de Bomboniere -->
+<section class="clientes" id="section-bonboniere">
+  <h2>Bomboniere</h2>
+  <table id="table-bonboniere">
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th>Nome</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
+
 
     <section class="clientes" id="clientes">
       <h1 class="heading"><span>Clientes</span> Cadastrados</h1>

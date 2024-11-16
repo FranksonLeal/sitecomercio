@@ -293,30 +293,46 @@ function updateCartIconNotification() {
   }
 
 
-  // Função para exibir os produtos na seção "menu"
   function exibirProdutos() {
-    const menuContainer = document.getElementById("produtos");
-    menuContainer.innerHTML = "";
+    // Containers de categorias
+    const iogurtesContainer = document.getElementById("produtos");
+    const bomboniereContainer = document.getElementById("produtos2");
 
-    const sectionTitle = document.querySelector(".menu .heading");
-    if (sectionTitle) {
-      sectionTitle.style.display = "block";
-    }
+    // Limpar os containers antes de adicionar novos produtos
+    iogurtesContainer.innerHTML = "";
+    bomboniereContainer.innerHTML = "";
 
+    // Buscar produtos do Firestore
     db.collection("produtos")
       .get()
       .then((querySnapshot) => {
-        if (querySnapshot.size === 0) {
+        if (querySnapshot.empty) {
+          // Mensagem para quando não houver produtos
           const noProductsMessage = document.createElement("p");
           noProductsMessage.textContent =
             "Não há produtos disponíveis no momento.";
           noProductsMessage.classList.add("no-products-message");
-          menuContainer.appendChild(noProductsMessage);
-        } else {
-          querySnapshot.forEach((doc) => {
-            const produto = doc.data();
-            const productBox = document.createElement("div");
-            productBox.classList.add("box-container");
+
+          iogurtesContainer.appendChild(noProductsMessage.cloneNode(true));
+          bomboniereContainer.appendChild(noProductsMessage.cloneNode(true));
+          return;
+        }
+
+        querySnapshot.forEach((doc) => {
+          const produto = doc.data();
+
+          // Verificar a categoria antes de criar e adicionar o elemento
+          let targetContainer = null;
+          if (produto.categoria === "iogurtes") {
+            targetContainer = iogurtesContainer;
+          } else if (produto.categoria === "bonboniere") {
+            targetContainer = bomboniereContainer;
+          }
+
+          if (targetContainer) {
+            // Criar o elemento do produto diretamente, sem box-container
+            const produtoElemento = document.createElement("div");
+            produtoElemento.classList.add("produto");  // Nova classe 'produto' sem box-container
 
             const productImage = document.createElement("img");
             productImage.src = produto.imagem;
@@ -326,28 +342,21 @@ function updateCartIconNotification() {
             productName.textContent = produto.nome;
 
             const productPrice = document.createElement("p");
-            if (
-              produto.preco !== undefined &&
-              !isNaN(parseFloat(produto.preco))
-            ) {
-              productPrice.textContent = `Preço: R$ ${parseFloat(
-                produto.preco
-              ).toFixed(2)}`;
-            } else {
-              productPrice.textContent = "Preço indisponível";
-            }
+            productPrice.textContent = produto.preco
+              ? `Preço: R$ ${parseFloat(produto.preco).toFixed(2)}`
+              : "Preço indisponível";
 
             const addToCartBtn = document.createElement("button");
             addToCartBtn.classList.add("btn");
             addToCartBtn.textContent = "Adicionar ao Carrinho";
 
-            productBox.appendChild(productImage);
-            productBox.appendChild(productName);
-            productBox.appendChild(productPrice);
-            productBox.appendChild(addToCartBtn);
+            // Adicionar os elementos ao produtoElemento
+            produtoElemento.appendChild(productImage);
+            produtoElemento.appendChild(productName);
+            produtoElemento.appendChild(productPrice);
+            produtoElemento.appendChild(addToCartBtn);
 
-            menuContainer.appendChild(productBox);
-
+            // Adicionar evento ao botão
             addToCartBtn.addEventListener("click", () => {
               const productDetails = {
                 id: doc.id,
@@ -357,27 +366,16 @@ function updateCartIconNotification() {
               };
               adicionarAoCarrinho(productDetails);
             });
-          });
-        }
-      });
-  }
 
-  const addToCartBtns = document.querySelectorAll(
-    ".menu .box-container button"
-  );
-  addToCartBtns.forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      const productDetails = {
-        nome: btn.parentNode.querySelector("h3").textContent,
-        imagem: btn.parentNode.querySelector("img").src,
-        preco: btn.parentNode
-          .querySelector("p")
-          .textContent.replace("Preço: R$ ", ""),
-        quantidade: 1,
-      };
-      adicionarAoCarrinho(productDetails);
-    });
-  });
+            // Adicionar o produto ao container correto
+            targetContainer.appendChild(produtoElemento);
+          }
+        });
+      })
+      .catch((error) => {
+        console.error("Erro ao buscar produtos: ", error);
+      });
+}
 
 
 
