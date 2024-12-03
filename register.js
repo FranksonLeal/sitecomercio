@@ -77,6 +77,25 @@ function buscarEndereco(cep) {
   }
 }
 
+const passwordInput = document.getElementById('password');
+const togglePasswordButton = document.getElementById('toggle-password');
+const passwordIcon = document.getElementById('password-icon');
+
+togglePasswordButton.addEventListener('click', () => {
+  const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordInput.setAttribute('type', type);
+
+  // Alterna o ícone
+  if (type === 'text') {
+    passwordIcon.classList.remove('fa-eye');
+    passwordIcon.classList.add('fa-eye-slash');
+  } else {
+    passwordIcon.classList.remove('fa-eye-slash');
+    passwordIcon.classList.add('fa-eye');
+  }
+});
+
+
 const form = {
   email: () => document.getElementById('email'),
   password: () => document.getElementById('password'),

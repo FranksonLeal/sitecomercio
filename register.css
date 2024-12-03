@@ -311,7 +311,19 @@ input:-webkit-autofill {
     z-index: 9999; /* Certifique-se de que o loading está acima de outros elementos */
 }
 
-
+#password {
+    padding-right: 40px; /* Espaço para o botão de alternar */
+  }
+  
+  #toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
 /* Estilos para telas menores que 600px */
 @media (max-width: 600px) {

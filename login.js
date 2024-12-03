@@ -99,7 +99,23 @@ function isFormValid() {
   return valid;
 }
 
+const passwordInput = document.getElementById('password');
+  const togglePasswordButton = document.getElementById('toggle-password');
+  const passwordIcon = document.getElementById('password-icon');
 
+  togglePasswordButton.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+
+    // Alternar o ícone
+    if (type === 'text') {
+      passwordIcon.classList.remove('fa-eye');
+      passwordIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordIcon.classList.remove('fa-eye-slash');
+      passwordIcon.classList.add('fa-eye');
+    }
+  });
 
 // Função para habilitar ou desabilitar botões com base na validade do email
 function toggleButtonsDisable() {

@@ -260,6 +260,15 @@
 
   <section class="carrinho" id="carrinho">
     <h1 class="heading"><span>Seu</span> carrinho</h1>
+    
+    <h3 class="aviso">
+      <i class="fas fa-exclamation-circle" style="color: orange; margin-right: 8px;"></i>
+      Todos os valores de iogurtes e sucos são exclusivos para compras no atacado, destinados apenas a comerciantes e revendedores de produtos.  
+      Para outras condições de compra, entre em contato com um atendente após o envio do pedido.
+  </h3>
+
+     
+    
     <div class="content">
       <table>
         <thead>
@@ -292,7 +301,7 @@
         <span id="total">R$ 0</span>
       </footer>
     </div>
-    <button id="finalizar-compra-btn">Finalizar Compra</button>
+    <button id="finalizar-compra-btn">Finalizar pedido  </button>
   </aside>
 
   <script>
@@ -371,17 +380,37 @@
   <div id="authModal" class="modal2">
     <div class="modal-content">
       <p>
-        Você precisa fazer login para prosseguir ao seu carrinho de compras.
+        Poxa, verificamos que você não tem cadastro conosco 😢. Com o cadastro você fica por dentro das novidades. Caso não possua cadastro:
+      </p>
+      <button id="cadastroModalBtn">Cadastrar agora!</button>
+      <p>
+        Se ja tiver cadastrado, faça login clicando no botão abaixo 👇.
       </p>
       <button id="loginModalBtn">Fazer Login</button>
 
       <p>
-        Não possui cadastro?
+        Ou, você pode continuar mesmo sem cadastro.
       </p>
-      <button id="cadastroModalBtn">Cadastrar</button>
+      <button id="continarSemCadastro">Continuar pedido</button>
+      
       <button id="closeModalBtn">Fechar</button>
     </div>
   </div>
+
+ <!-- Modal de mensagem de cadastro -->
+<div id="cadastroInsisModal" class="modal2">
+  <div class="modal-content">
+    <p>
+      Realize o seu cadastro para ficar por dentro das novidades e receber ofertas personalizadas. É simples, rápido e prático 😉. Clique no botão abaixo 👇:
+    </p>
+    <button id="cadastroModalBtnMsg">Cadastrar agora!</button>
+    <button id="closeModalCadastroBtn">Fechar</button>
+  </div>
+</div>
+
+
+
+
 
   <!-- Modal para exibir os dados do usuário -->
   <div id="userDataModal" class="modal3">

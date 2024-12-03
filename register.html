@@ -40,11 +40,24 @@
                         
                     </label>
                   
-                    <label class="label-input" for="password-input">
+                    <label class="label-input" for="password-input" style="position: relative; display: flex; align-items: center;">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha" id="password" />
-                        
-                    </label>
+                        <input 
+                          type="password" 
+                          placeholder="Senha" 
+                          id="password" 
+                          style="padding-right: 40px;" 
+                        />
+                        <button 
+                          type="button" 
+                          id="toggle-password" 
+                          aria-label="Mostrar ou ocultar senha" 
+                          style="background: none; border: none; cursor: pointer; position: absolute; right: 10px; top: 50%; transform: translateY(-50%);"
+                        >
+                          <i id="password-icon" class="fas fa-eye"></i>
+                        </button>
+                      </label>
+                      
                 
              
                     <label class="label-input" for="telefone-input">

@@ -861,6 +861,8 @@ Fim do modal de missao, visao e valores */
 /* Início da seção de carrinho de compra */
 
 table {
+  border-radius: 20px;
+  background: white;
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
@@ -873,6 +875,7 @@ table thead tr {
 }
 
 table thead th {
+  background: white;
   text-transform: none;
   text-align: center;
   font-size: 15px;
@@ -1374,8 +1377,8 @@ aside>button:hover {
 
 /* Conteúdo do modal */
 .modal-content {
-  background-color: #e77c1c; /* Cor de fundo mais vibrante */
-  margin: 8% auto;
+  background-color: #fff; /* Cor de fundo mais vibrante */
+  margin: 3% auto;
   padding: 40px;
   border-radius: 12px;
   width: 90%;
@@ -1399,9 +1402,9 @@ aside>button:hover {
 
 /* Estilo para parágrafos */
 .modal-content p {
-  color: white;
+  color: #333;
   text-transform: none;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: none;
   /* Impede a transformação do texto para maiúsculas */
   margin-bottom: 35px;
@@ -1417,10 +1420,10 @@ aside>button:hover {
 /* Estilo dos rótulos */
 .modal-content label {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 14px;
   text-transform: none;
   /* Impede a transformação do texto para maiúsculas */
-  color: #fff; /* Cor do texto dos rótulos */
+  color: #333;
 }
 
 /* Estilo dos inputs e selects */
@@ -1463,23 +1466,68 @@ aside>button:hover {
 
 /* Estilo do botão */
 .modal-content button {
-  font-size: 18px;
-  width: 60%;
+  font-size: 14px;
+  width: 40%;
   padding: 15px 0;
   margin: 10px;
   border: none;
   border-radius: 20px;
-  background-color: #fff;
-  color: #f9a825;
+  background-color: #e77c1c;
+  border: 2px solid #ffffff;
+  /* Adiciona uma borda branca de 2px */
+  color: #ffffff;
   text-transform: none;
   /* Impede a transformação do texto para maiúsculas */
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+
+  .header {
+    padding: 1.2rem 1rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+  /* Estilo do botão */
+.modal-content button {
+  font-size: 12px;
+  width: 50%;
+  padding: 15px 0;
+  margin: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #e77c1c;
+  border: 2px solid #ffffff;
+  /* Adiciona uma borda branca de 2px */
+  color: #ffffff;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  cursor: pointer;
+  transition:
+  
+  background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para parágrafos */
+.modal-content p {
+  color: #333;
+  text-transform: none;
+  font-size: 14px;
+  text-transform: none;
+  /* Impede a transformação do texto para maiúsculas */
+  margin-bottom: 35px;
+}
+}
+
 .modal-content button:hover {
-  background-color: #f9a825; /* Muda a cor ao passar o mouse */
-  color: white; /* Texto branco ao passar o mouse */
+  background-color: #cf6d19;
+  color: #ffffff;
 }
 
 /* Estilo do título dentro do modal */
@@ -1764,6 +1812,7 @@ input[type="email"]:focus {
 
 .modal-content4 button:hover {
   background-color: #d6691a; /* Cor de destaque ao passar o mouse */
+  color: #ffffff;   
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Aumentar a sombra no hover */
 }
 
@@ -1790,7 +1839,7 @@ input[type="email"]:focus {
 }
 
 .button-list li button:hover {
-  background-color: #f2c59f;
+  background-color: #cf6d19;
 }
 
 
@@ -1961,8 +2010,8 @@ input[type="email"]:focus {
 
 .close9 {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 40px;
+    right: 40px;
   cursor: pointer;
   font-size: 24px;
   color: #888;
@@ -2629,3 +2678,34 @@ input[type="email"]:focus {
   text-transform: none;
   line-height: 1.5;
 }
+
+
+
+
+.carrinho {
+  text-align: center; /* Centraliza todos os elementos de texto dentro da seção */
+}
+
+.aviso {
+  margin: 15px 0; /* Espaço entre o aviso e outros elementos */
+  font-size: 1.1rem; /* Ajusta o tamanho da fonte */
+  color: #666; /* Cor do texto */
+  padding: 5px;
+  text-transform: none;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 1s ease-in-out;
+}
+
+

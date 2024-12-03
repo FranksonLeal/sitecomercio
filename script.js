@@ -160,14 +160,21 @@ enviarPedidoBtn.addEventListener("click", function () {
     window.location.href = "login.html";
   });
 
-  var modal2 = document.getElementById("authModal");
+  
+  const irParaCadastro = document.getElementById("cadastroModalBtn");
+  irParaCadastro.addEventListener("click", function () {
+    window.location.href = "register.html";
+  });
 
   var closeModalBtn = document.getElementById("closeModalBtn");
-
+  
+  var modal2 = document.getElementById("authModal");
   // Fechar o modal ao clicar no botão de fechar
   closeModalBtn.addEventListener("click", function () {
     modal2.style.display = "none";
   });
+
+  
 
   // Verificar se o usuário está autenticado
   auth.onAuthStateChanged((user) => {
@@ -901,9 +908,43 @@ document.getElementById("entrarbtn").addEventListener("click", function () {
 
 
 
+// Selecionar elementos do DOM
+const finalizarBtn2 = document.getElementById("finalizar");
+const cadastroInsisModal = document.getElementById("cadastroInsisModal");
+const closeModalCadastroBtn = document.getElementById("closeModalCadastroBtn");
 
+// Adicionar listener ao botão "Finalizar"
+finalizarBtn2.addEventListener("click", function () {
+  const user = firebase.auth().currentUser; // Verifica usuário autenticado no Firebase
 
+  if (!user) {
+    // Usuário não autenticado: exibe o modal de cadastro
+    cadastroInsisModal.style.display = "block";
+  } else {
+    // Usuário autenticado: lógica para finalizar compra
+    alert("Compra finalizada com sucesso!");
+  }
+});
 
+// Adicionar listener para fechar o modal de cadastro
+closeModalCadastroBtn.addEventListener("click", function () {
+  cadastroInsisModal.style.display = "none";
+});
+
+const irParaCadastroModalMsg = document.getElementById("cadastroModalBtnMsg");
+irParaCadastroModalMsg.addEventListener("click", function () {
+    window.location.href = "register.html";
+  });
+
+const continuarSemCadastroBtn = document.getElementById("continarSemCadastro");
+// Event listener para "Continuar pedido"
+continuarSemCadastroBtn.addEventListener("click", function () {
+  // Fechar o modal de autenticação
+  authModal.style.display = "none";
+  
+  // Abrir o modal de finalizar compra
+  finalizarCompraModal.style.display = "block";
+});
 
 
 // Event listener para o botão "Finalizar"
